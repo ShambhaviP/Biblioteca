@@ -9,6 +9,6 @@ public class BibliotecaApplication {
 
     public static void main(String args[]) {
         BibliotecaApplication bibliotecaApplication = new BibliotecaApplication();
-        bibliotecaApplication.start();
+        System.out.println(bibliotecaApplication.start());
     }
 }
