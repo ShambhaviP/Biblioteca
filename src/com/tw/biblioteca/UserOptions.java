@@ -8,7 +8,7 @@ public class UserOptions {
     private ArrayList<String> options;
 
     UserOptions() {
-        options = new ArrayList<String>();
+        options = new ArrayList<>();
     }
 
     public ArrayList<String> createOptionList() {

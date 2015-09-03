@@ -8,7 +8,7 @@ public class MainMenu {
     private ArrayList<String> optionList;
 
     MainMenu() {
-        optionList =new ArrayList<String>();
+        optionList =new ArrayList<>();
     }
 
     public ArrayList<String> getOptionList() {
