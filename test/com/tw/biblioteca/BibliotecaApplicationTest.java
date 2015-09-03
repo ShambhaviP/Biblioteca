@@ -10,6 +10,6 @@ public class BibliotecaApplicationTest {
     public void shouldDisplayWelcomeMessageWhenTheApplicationStarts() {
         BibliotecaApplication bibliotecaApplication = new BibliotecaApplication();
 
-        assertEquals("Welcome To Biblioteca!", bibliotecaApplication.start());
+        assertEquals("Welcome To Biblioteca!", bibliotecaApplication.showWelcomeMessage());
     }
 }

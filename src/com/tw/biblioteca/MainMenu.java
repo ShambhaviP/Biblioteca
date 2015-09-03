@@ -5,14 +5,15 @@ import java.util.ArrayList;
 
 public class MainMenu {
 
-    private ArrayList<String> options;
+    private ArrayList<String> optionList;
 
     MainMenu() {
-        options = new ArrayList<>();
-        options.add("List Books");
+        optionList =new ArrayList<String>();
     }
 
-    public ArrayList<String> showOptions() {
-        return options;
+    public ArrayList<String> getOptionList() {
+        UserOptions userOptions = new UserOptions();
+        optionList = userOptions.createOptionList();
+        return optionList;
     }
 }
