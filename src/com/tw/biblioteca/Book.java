@@ -1,3 +1,4 @@
+//creates book objects that have their title,author name,and the year of publishing
 package com.tw.biblioteca;
 
 public class Book {
@@ -18,5 +19,9 @@ public class Book {
 
     public String getAuthor() {
         return author;
+    }
+
+    public String getYear() {
+        return year;
     }
 }

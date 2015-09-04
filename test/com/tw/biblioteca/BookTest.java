@@ -19,4 +19,11 @@ public class BookTest {
 
         assertEquals("Khaled Hosseini", book.getAuthor());
     }
+
+    @Test
+    public void shouldHaveAValidYearOfPublishing() {
+        Book book = new Book("Nefertiti", "Michelle Moran", "2011");
+
+        assertEquals("2011", book.getYear());
+    }
 }
