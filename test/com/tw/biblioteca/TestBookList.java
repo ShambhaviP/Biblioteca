@@ -28,7 +28,7 @@ public class TestBookList {
         BookList bookList = new BookList();
         bookList.displayPredefinedBookList();
 
-        assertEquals(bookListTestArray.toString() + "\n", outContent.toString());
+        assertEquals("Twilight\nWuthering Heights\nGone With The Wind\nOliver Twist\n", outContent.toString());
     }
 
     @After

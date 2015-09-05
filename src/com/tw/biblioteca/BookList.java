@@ -16,6 +16,7 @@ public class BookList {
     }
 
     public void displayPredefinedBookList() {
-        System.out.println(booksAvailable);
+        for(String books:booksAvailable)
+            System.out.println(books);
     }
 }
