@@ -22,7 +22,11 @@
                 <pathelement location="lib/hamcrest-core-1.3.jar"/>
                 <pathelement location="out"/>
             </classpath>
-            <test name="com.tw.biblioteca.BibliotecaApplicationTest"/>
+            <batchtest fork="yes">
+                <fileset dir="test">
+                    <include name="**/*Test*.java"/>
+                </fileset>
+            </batchtest>
         </junit>
     </target>
 
