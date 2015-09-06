@@ -10,6 +10,6 @@ public class BookTest {
    public void shouldReturnBookTitleAndAuthorAndYearOfPublish() {
        Book book = new Book("Twilight", "Stephanie Meyer", 2006);
 
-       assertEquals("Twilight        Stephanie Meyer        2006", book.bookDetails());
+       assertEquals((String.format("%-20s%-20s%-20d", "Twilight", "Stephanie Meyer", 2006)), book.bookDetails());
    }
 }

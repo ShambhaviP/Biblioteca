@@ -24,7 +24,7 @@ public class BookList {
     }
 
     public void displayColumnHeaders() {
-        System.out.println(lineDivider+columnHeaderForBookTitle+"        "+columnHeaderForAuthor+"        "+columnHeaderForYearOfPublish+lineDivider);
+        System.out.println(lineDivider + String.format("%-20s%-20s%-20s", columnHeaderForBookTitle, columnHeaderForAuthor, columnHeaderForYearOfPublish) + lineDivider);
     }
 
     public void displayPredefinedBookList() {

@@ -17,7 +17,7 @@ public class TestBookList {
         BookList bookList = new BookList();
 
         ArrayList<String> booksAvailable = new ArrayList<>();
-        booksAvailable.add("Twilight        Stephanie Meyer        2006");
+        booksAvailable.add((String.format("%-20s%-20s%-20d", "Twilight", "Stephanie Meyer", 2006)));
 
         assertEquals(booksAvailable, bookList.createBookList(book1));
     }
@@ -39,7 +39,7 @@ public class TestBookList {
         bookList.createBookList(book2);
         bookList.displayPredefinedBookList();
 
-        assertEquals("Twilight        Stephanie Meyer        2006\nWuthering Heights        Emily Bronte        1777\n", outContent.toString());
+        assertEquals((String.format("%-20s%-20s%-20d", "Twilight", "Stephanie Meyer", 2006))+"\n"+(String.format("%-20s%-20s%-20d", "Wuthering Heights", "Emily Bronte", 1777))+"\n", outContent.toString());
     }
 
     @Test
@@ -47,7 +47,7 @@ public class TestBookList {
         BookList bookList = new BookList();
         bookList.displayColumnHeaders();
 
-        assertEquals("\n-------------------------------------------------------\n"+"Title        Author        Year Of Publish"+"\n-------------------------------------------------------\n"+"\n", outContent.toString());
+        assertEquals(("\n-------------------------------------------------------\n"+String.format("%-20s%-20s%-20s", "Title", "Author", "Year Of Publish")+"\n-------------------------------------------------------\n"+"\n"), outContent.toString());
     }
 
     @After
