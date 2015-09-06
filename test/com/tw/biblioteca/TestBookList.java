@@ -14,8 +14,6 @@ public class TestBookList {
     @Test
     public void shouldReturnAnArrayListOfBookObjects() {
         Book book1 = new Book("Twilight", "Stephanie Meyer", 2006);
-        Book book2 = new Book("Wuthering Heights", "Emily Bronte", 1777);
-        Book book3 = new Book("Oliver Twist", "Charles Dickens", 1790);
         BookList bookList = new BookList();
 
         ArrayList<String> booksAvailable = new ArrayList<>();
@@ -35,15 +33,13 @@ public class TestBookList {
     public void shouldDisplayAPreDefinedListOfBooks() {
         Book book1 = new Book("Twilight", "Stephanie Meyer", 2006);
         Book book2 = new Book("Wuthering Heights", "Emily Bronte", 1777);
-        Book book3 = new Book("Oliver Twist", "Charles Dickens", 1790);
         BookList bookList = new BookList();
 
         bookList.createBookList(book1);
         bookList.createBookList(book2);
-        bookList.createBookList(book3);
         bookList.displayPredefinedBookList();
 
-        assertEquals("Twilight\nWuthering Heights\nGone With The Wind\nOliver Twist\n", outContent.toString());
+        assertEquals("Twilight    Stephanie Meyer    2006\nWuthering Heights    Emily Bronte    1777\n", outContent.toString());
     }
 
     @Test
@@ -58,5 +54,4 @@ public class TestBookList {
     public void cleanUpStreams() {
         System.setOut(null);
     }
-
 }
