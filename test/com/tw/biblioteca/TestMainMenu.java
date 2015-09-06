@@ -4,6 +4,7 @@ import org.junit.Test;
 
 import java.util.ArrayList;
 
+import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertNotEquals;
 
 public class TestMainMenu {
@@ -15,5 +16,15 @@ public class TestMainMenu {
         ArrayList<String> optionList = new ArrayList<>();
 
         assertNotEquals(optionList, mainMenu.createOptionList(userOption));
+    }
+
+    @Test
+    public void shouldReturnAValidOptionList() {
+        UserOption userOption = new UserOption("List Books");
+        MainMenu mainMenu = new MainMenu();
+        ArrayList<String> optionList = new ArrayList<>();
+        optionList.add("List Books");
+
+        assertEquals(optionList, mainMenu.createOptionList(userOption));
     }
 }
