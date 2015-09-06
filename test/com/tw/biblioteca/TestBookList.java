@@ -47,7 +47,7 @@ public class TestBookList {
         BookList bookList = new BookList();
         bookList.displayColumnHeaders();
 
-        assertEquals("Title        Author        Year Of Publish\n", outContent.toString());
+        assertEquals("\n-------------------------------------------------------\n"+"Title        Author        Year Of Publish"+"\n-------------------------------------------------------\n"+"\n", outContent.toString());
     }
 
     @After

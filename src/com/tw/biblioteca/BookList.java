@@ -8,12 +8,14 @@ public class BookList {
     private String columnHeaderForBookTitle;
     private String columnHeaderForAuthor;
     private String columnHeaderForYearOfPublish;
+    private String lineDivider;
     private ArrayList<String> booksAvailable = new ArrayList<>();
 
     BookList() {
         columnHeaderForBookTitle = "Title";
         columnHeaderForAuthor = "Author";
         columnHeaderForYearOfPublish = "Year Of Publish";
+        lineDivider = "\n-------------------------------------------------------\n";
     }
 
     public ArrayList<String> createBookList(Book book) {
@@ -22,7 +24,7 @@ public class BookList {
     }
 
     public void displayColumnHeaders() {
-        System.out.println(columnHeaderForBookTitle+"        "+columnHeaderForAuthor+"        "+columnHeaderForYearOfPublish);
+        System.out.println(lineDivider+columnHeaderForBookTitle+"        "+columnHeaderForAuthor+"        "+columnHeaderForYearOfPublish+lineDivider);
     }
 
     public void displayPredefinedBookList() {
