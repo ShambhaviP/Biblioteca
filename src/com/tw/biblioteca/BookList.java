@@ -5,18 +5,15 @@ import java.util.ArrayList;
 
 public class BookList {
 
-    private ArrayList<String> booksAvailable;
+    private ArrayList<String> booksAvailable = new ArrayList<>();
 
-    BookList() {
-        booksAvailable = new ArrayList<>();
-        booksAvailable.add("Twilight");
-        booksAvailable.add("Wuthering Heights");
-        booksAvailable.add("Gone With The Wind");
-        booksAvailable.add("Oliver Twist");
+    public ArrayList<String> createBookList(Book book) {
+        booksAvailable.add(book.bookDetails());
+        return booksAvailable;
     }
 
     public void displayPredefinedBookList() {
-        for(String books:booksAvailable)
+        for (String books : booksAvailable)
             System.out.println(books);
     }
 }

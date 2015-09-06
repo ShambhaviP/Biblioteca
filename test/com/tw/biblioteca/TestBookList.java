@@ -19,13 +19,14 @@ public class TestBookList {
 
     @Test
     public void shouldDisplayAPreDefinedListOfBooks() {
-        ArrayList<String> bookListTestArray = new ArrayList<>();
-        bookListTestArray.add("Twilight");
-        bookListTestArray.add("Wuthering Heights");
-        bookListTestArray.add("Gone With The Wind");
-        bookListTestArray.add("Oliver Twist");
-
+        Book book1 = new Book("Twilight", "Stephanie Meyer", 2006);
+        Book book2 = new Book("Wuthering Heights", "Emily Bronte", 1777);
+        Book book3 = new Book("Oliver Twist", "Charles Dickens", 1790);
         BookList bookList = new BookList();
+
+        bookList.createBookList(book1);
+        bookList.createBookList(book2);
+        bookList.createBookList(book3);
         bookList.displayPredefinedBookList();
 
         assertEquals("Twilight\nWuthering Heights\nGone With The Wind\nOliver Twist\n", outContent.toString());
@@ -34,5 +35,18 @@ public class TestBookList {
     @After
     public void cleanUpStreams() {
         System.setOut(null);
+    }
+
+    @Test
+    public void shouldReturnAnArrayListOfBookObjects() {
+        Book book1 = new Book("Twilight", "Stephanie Meyer", 2006);
+        Book book2 = new Book("Wuthering Heights", "Emily Bronte", 1777);
+        Book book3 = new Book("Oliver Twist", "Charles Dickens", 1790);
+        BookList bookList = new BookList();
+
+        ArrayList<String> booksAvailable = new ArrayList<>();
+        booksAvailable.add("Twilight    Stephanie Meyer    2006");
+
+        assertEquals(booksAvailable, bookList.createBookList(book1));
     }
 }
