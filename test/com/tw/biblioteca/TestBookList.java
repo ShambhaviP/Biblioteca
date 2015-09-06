@@ -17,7 +17,7 @@ public class TestBookList {
         BookList bookList = new BookList();
 
         ArrayList<String> booksAvailable = new ArrayList<>();
-        booksAvailable.add("Twilight    Stephanie Meyer    2006");
+        booksAvailable.add("Twilight        Stephanie Meyer        2006");
 
         assertEquals(booksAvailable, bookList.createBookList(book1));
     }
@@ -39,7 +39,7 @@ public class TestBookList {
         bookList.createBookList(book2);
         bookList.displayPredefinedBookList();
 
-        assertEquals("Twilight    Stephanie Meyer    2006\nWuthering Heights    Emily Bronte    1777\n", outContent.toString());
+        assertEquals("Twilight        Stephanie Meyer        2006\nWuthering Heights        Emily Bronte        1777\n", outContent.toString());
     }
 
     @Test
@@ -47,7 +47,7 @@ public class TestBookList {
         BookList bookList = new BookList();
         bookList.displayColumnHeaders();
 
-        assertEquals("Book    Author    Year Of Publish\n", outContent.toString());
+        assertEquals("Title        Author        Year Of Publish\n", outContent.toString());
     }
 
     @After

@@ -5,7 +5,16 @@ import java.util.ArrayList;
 
 public class BookList {
 
+    private String columnHeaderForBookTitle;
+    private String columnHeaderForAuthor;
+    private String columnHeaderForYearOfPublish;
     private ArrayList<String> booksAvailable = new ArrayList<>();
+
+    BookList() {
+        columnHeaderForBookTitle = "Title";
+        columnHeaderForAuthor = "Author";
+        columnHeaderForYearOfPublish = "Year Of Publish";
+    }
 
     public ArrayList<String> createBookList(Book book) {
         booksAvailable.add(book.bookDetails());
@@ -13,7 +22,7 @@ public class BookList {
     }
 
     public void displayColumnHeaders() {
-        System.out.println("Book    Author    Year Of Publish");
+        System.out.println(columnHeaderForBookTitle+"        "+columnHeaderForAuthor+"        "+columnHeaderForYearOfPublish);
     }
 
     public void displayPredefinedBookList() {

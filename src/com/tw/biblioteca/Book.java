@@ -14,6 +14,6 @@ public class Book {
     }
 
     public String bookDetails() {
-        return bookName+"    "+author+"    "+yearOfPublish;
+        return bookName+"        "+author+"        "+yearOfPublish;
     }
 }
