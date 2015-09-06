@@ -1,3 +1,4 @@
+//to create book objects and fetch their details
 package com.tw.biblioteca;
 
 public class Book {

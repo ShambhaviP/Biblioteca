@@ -12,6 +12,10 @@ public class BookList {
         return booksAvailable;
     }
 
+    public void displayColumnHeaders() {
+        System.out.println("Book    Author    Year Of Publish");
+    }
+
     public void displayPredefinedBookList() {
         for (String books : booksAvailable)
             System.out.println(books);
