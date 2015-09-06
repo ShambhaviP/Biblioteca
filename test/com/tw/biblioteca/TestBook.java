@@ -4,7 +4,7 @@ import org.junit.Test;
 
 import static org.junit.Assert.assertEquals;
 
-public class BookTest {
+public class TestBook {
 
    @Test
    public void shouldReturnBookTitleAndAuthorAndYearOfPublish() {

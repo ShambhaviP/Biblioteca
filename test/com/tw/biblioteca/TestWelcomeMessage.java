@@ -8,7 +8,7 @@ import java.io.PrintStream;
 
 import static org.junit.Assert.assertEquals;
 
-public class WelcomeMessageTest {
+public class TestWelcomeMessage {
 
     private final ByteArrayOutputStream outContent = new ByteArrayOutputStream();
 
