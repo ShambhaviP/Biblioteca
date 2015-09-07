@@ -1,19 +1,16 @@
 //Biblioteca application launcher
 package com.tw.biblioteca;
 
+import java.io.IOException;
+
 public class BibliotecaApplication {
 
-    public static void main(String args[]) {
-        WelcomeMessage welcomeMessage = new WelcomeMessage("\nHello,User!Welcome to Biblioteca!");
+    public static void main(String args[]) throws IOException {
+        WelcomeMessage welcomeMessage = new WelcomeMessage("\nHello,User!Welcome to Biblioteca!\n");
         welcomeMessage.showMessage();
-        Book book1 = new Book("Twilight", "Stephanie Meyer", 2006);
-        Book book2 = new Book("Wuthering Heights", "Emily Bronte", 1777);
-        Book book3 = new Book("Oliver Twist", "Charles Dickens", 1790);
-        BookList bookList = new BookList();
-        bookList.createBookList(book1);
-        bookList.createBookList(book2);
-        bookList.createBookList(book3);
-        bookList.displayColumnHeaders();
-        bookList.displayPredefinedBookList();
+        UserOption userOption = new UserOption("1.List Books (Enter 1 to choose this option)");
+        MainMenu mainMenu = new MainMenu();
+        mainMenu.createOptionList(userOption);
+        mainMenu.displayOptionList();
     }
 }
