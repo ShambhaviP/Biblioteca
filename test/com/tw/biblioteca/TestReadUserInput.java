@@ -9,7 +9,7 @@ import static org.junit.Assert.assertEquals;
 public class TestReadUserInput {
 
     @Test
-    public void shouldReturnChoiceInputByTheUser() {
+    public void shouldReturnTheChoiceEnteredByTheUser() {
         ReadUserInput readUserInput = new ReadUserInput();
         ByteArrayInputStream inputStream = new ByteArrayInputStream("1".getBytes());
 
