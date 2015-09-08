@@ -9,7 +9,6 @@ public class WelcomeMessage {
         this.message = message;
     }
 
-
     public void showMessage() {
         System.out.println(message);
     }

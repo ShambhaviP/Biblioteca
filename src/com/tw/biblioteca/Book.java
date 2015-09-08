@@ -13,7 +13,7 @@ public class Book {
         this.yearOfPublish = yearOfPublish;
     }
 
-    public String bookDetails() {
+    public String getFormattedBookDetails() {
         return String.format("%-20s%-20s%-20d", bookName, author, yearOfPublish);
     }
 }

@@ -5,30 +5,23 @@ import java.util.ArrayList;
 
 public class BookList {
 
-    private String columnHeaderForBookTitle;
-    private String columnHeaderForAuthor;
-    private String columnHeaderForYearOfPublish;
-    private String lineDivider;
-    private ArrayList<String> booksAvailable = new ArrayList<>();
+    private ArrayList<String> listOfBooks = new ArrayList<>();
+
+    BookList(ArrayList<String> listOfBooks) {
+        this.listOfBooks = listOfBooks;
+    }
 
     BookList() {
-        columnHeaderForBookTitle = "Title";
-        columnHeaderForAuthor = "Author";
-        columnHeaderForYearOfPublish = "Year Of Publish";
-        lineDivider = "\n-------------------------------------------------------\n";
+
     }
 
-    public ArrayList<String> createBookList(Book book) {
-        booksAvailable.add(book.bookDetails());
-        return booksAvailable;
-    }
-
-    public void displayColumnHeaders() {
-        System.out.println(lineDivider + String.format("%-20s%-20s%-20s", columnHeaderForBookTitle, columnHeaderForAuthor, columnHeaderForYearOfPublish) + lineDivider);
+    public String displayColumnHeaders() {
+        String lineDivider = "\n-------------------------------------------------------\n";
+        return lineDivider + String.format("%-20s%-20s%-20s", "Title", "Author", "Year Of Publish") + lineDivider;
     }
 
     public void displayPredefinedBookList() {
-        for (String books : booksAvailable)
+        for (String books : listOfBooks)
             System.out.println(books);
     }
 }
