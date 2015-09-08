@@ -4,8 +4,13 @@ package com.tw.biblioteca;
 public class InputInterpreter {
 
     private int choice;
-    private BookList bookList = new BookList();
-    private ListBookOption listBookOption = new ListBookOption(bookList);
+    private BookList bookList;
+    private ListBookOption listBookOption;
+
+    InputInterpreter(BookList bookList) {
+        this.bookList = bookList;
+        listBookOption = new ListBookOption(bookList);
+    }
 
     public void interpret(int choice) {
 

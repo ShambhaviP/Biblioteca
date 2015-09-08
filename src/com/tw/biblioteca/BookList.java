@@ -5,14 +5,15 @@ import java.util.ArrayList;
 
 public class BookList {
 
-    private ArrayList<String> listOfBooks = new ArrayList<>();
+    private ArrayList<String> listOfBooks;
 
     BookList(ArrayList<String> listOfBooks) {
         this.listOfBooks = listOfBooks;
     }
 
-    BookList() {
+    public BookList() {
 
+        listOfBooks = new ArrayList<>();
     }
 
     public String displayColumnHeaders() {

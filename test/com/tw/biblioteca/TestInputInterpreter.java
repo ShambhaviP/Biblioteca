@@ -21,11 +21,12 @@ public class TestInputInterpreter {
 
     @Test
     public void shouldDisplayListOfBooksWhenUserEntersOneAsTheChoice() {
-        InputInterpreter inputInterpreter = new InputInterpreter();
+
         ArrayList<String> listOfBooks = new ArrayList<>();
         Book book = new Book("Dracula", "Bram Stoker", 1920);
         listOfBooks.add(book.getFormattedBookDetails());
         BookList bookList = new BookList(listOfBooks);
+        InputInterpreter inputInterpreter = new InputInterpreter(bookList);
         ListBookOption listBookOption = new ListBookOption(bookList);
         listBookOption.performOperation();
         String lineDivider = "\n-------------------------------------------------------\n";
