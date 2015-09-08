@@ -11,7 +11,7 @@ public class ListBookOption implements Operations {
     @Override
     public void performOperation() {
         System.out.println(bookList.displayColumnHeaders());
-
+        bookList.displayPredefinedBookList();
     }
 }
 
