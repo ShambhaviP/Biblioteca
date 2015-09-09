@@ -2,16 +2,17 @@ package com.tw.biblioteca;
 
 public class ListBookOption implements Operations {
 
-    private BookList bookList;
+    private BookList books;
 
-    ListBookOption(BookList bookList) {
-        this.bookList = bookList;
+    ListBookOption(BookList books) {
+        this.books = books;
     }
 
     @Override
     public void performOperation() {
-        System.out.println(bookList.displayColumnHeaders());
-        bookList.displayPredefinedBookList();
+        System.out.println(books.getColumnHeaders());
+        for (String booklibrary : books.getALibraryOfBooks())
+            System.out.println(booklibrary);
     }
 }
 

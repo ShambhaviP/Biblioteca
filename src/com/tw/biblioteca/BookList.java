@@ -1,28 +1,26 @@
-//displays a pre-defined book-list
+//to get column headers and a library of books
 package com.tw.biblioteca;
 
 import java.util.ArrayList;
 
 public class BookList {
 
-    private ArrayList<String> listOfBooks;
+    private ArrayList<String> books;
 
-    BookList(ArrayList<String> listOfBooks) {
-        this.listOfBooks = listOfBooks;
+    BookList(ArrayList<String> books) {
+        this.books = books;
     }
 
     public BookList() {
-
-        listOfBooks = new ArrayList<>();
+        books = new ArrayList<>();
     }
 
-    public String displayColumnHeaders() {
+    public String getColumnHeaders() {
         String lineDivider = "\n-------------------------------------------------------\n";
         return lineDivider + String.format("%-20s%-20s%-20s", "Title", "Author", "Year Of Publish") + lineDivider;
     }
 
-    public void displayPredefinedBookList() {
-        for (String books : listOfBooks)
-            System.out.println(books);
+    public ArrayList<String> getALibraryOfBooks() {
+        return books;
     }
 }

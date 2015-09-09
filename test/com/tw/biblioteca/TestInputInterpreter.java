@@ -30,8 +30,7 @@ public class TestInputInterpreter {
         listOfBooks.add(book.getFormattedBookDetails());
         BookList bookList = new BookList(listOfBooks);
         InputInterpreter inputInterpreter = new InputInterpreter(bookList);
-        ListBookOption listBookOption = new ListBookOption(bookList);
-        listBookOption.performOperation();
+        inputInterpreter.interpret("1");
         String lineDivider = "\n-------------------------------------------------------\n";
 
         assertEquals((lineDivider + String.format("%-20s%-20s%-20s", "Title", "Author", "Year Of Publish") + lineDivider + "\n" + String.format("%-20s%-20s%-20s", "Dracula", "Bram Stoker", 1920) + "\n"), outContent.toString());
@@ -46,7 +45,7 @@ public class TestInputInterpreter {
         listOfBooks.add(book.getFormattedBookDetails());
         BookList bookList = new BookList(listOfBooks);
         InputInterpreter inputInterpreter = new InputInterpreter(bookList);
-        inputInterpreter.interpret(0);
+        inputInterpreter.interpret("0");
 
         assertEquals("\nSelect a valid option!\n", outContent.toString());
     }
@@ -65,7 +64,7 @@ public class TestInputInterpreter {
         InputInterpreter inputInterpreter = new InputInterpreter(bookList);
 
         exit.expectSystemExit();
-        inputInterpreter.interpret(2);
+        inputInterpreter.interpret("2");
     }
 
     @After

@@ -26,7 +26,7 @@ public class BibliotecaApplication {
             mainMenu.displayOptionList();
             ReadUserInput readUserInput = new ReadUserInput();
             InputInterpreter inputInterpreter = new InputInterpreter(bookList);
-            inputInterpreter.interpret(Integer.parseInt(readUserInput.read()));
+            inputInterpreter.interpret(readUserInput.read());
         }
     }
 }
