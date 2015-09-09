@@ -6,13 +6,13 @@ import java.util.ArrayList;
 
 import static org.junit.Assert.assertEquals;
 
-public class TestBookList {
+public class TestBookLibrary {
 
     @Test
     public void shouldReturnColumnHeadersForBookDetails() {
-        BookList bookList = new BookList();
+        BookLibrary bookLibrary = new BookLibrary();
 
-        assertEquals(("\n-------------------------------------------------------\n" + String.format("%-20s%-20s%-20s", "Title", "Author", "Year Of Publish") + "\n-------------------------------------------------------\n"), bookList.getColumnHeaders());
+        assertEquals(("\n-------------------------------------------------------\n" + String.format("%-20s%-20s%-20s", "Title", "Author", "Year Of Publish") + "\n-------------------------------------------------------\n"), bookLibrary.getColumnHeaders());
     }
 
     private final ByteArrayOutputStream outContent = new ByteArrayOutputStream();
@@ -24,8 +24,8 @@ public class TestBookList {
         ArrayList<String> books = new ArrayList<>();
         books.add(book1.getFormattedBookDetails());
         books.add(book2.getFormattedBookDetails());
-        BookList bookList = new BookList(books);
+        BookLibrary bookLibrary = new BookLibrary(books);
 
-        assertEquals(books, bookList.getALibraryOfBooks());
+        assertEquals(books, bookLibrary.getALibraryOfBooks());
     }
 }

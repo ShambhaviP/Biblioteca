@@ -1,10 +1,11 @@
+//performs the operation of printing available books in library with their details
 package com.tw.biblioteca;
 
 public class ListBookOption implements Operations {
 
-    private BookList books;
+    private BookLibrary books;
 
-    ListBookOption(BookList books) {
+    ListBookOption(BookLibrary books) {
         this.books = books;
     }
 

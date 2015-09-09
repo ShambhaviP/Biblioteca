@@ -5,8 +5,8 @@ public class InputInterpreter {
 
     private ListBookOption listBookOption;
 
-    InputInterpreter(BookList bookList) {
-        listBookOption = new ListBookOption(bookList);
+    InputInterpreter(BookLibrary bookLibrary) {
+        listBookOption = new ListBookOption(bookLibrary);
     }
 
     public void interpret(String choice) {

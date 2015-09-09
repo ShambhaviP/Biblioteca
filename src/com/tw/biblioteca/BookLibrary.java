@@ -3,15 +3,15 @@ package com.tw.biblioteca;
 
 import java.util.ArrayList;
 
-public class BookList {
+public class BookLibrary {
 
     private ArrayList<String> books;
 
-    BookList(ArrayList<String> books) {
+    BookLibrary(ArrayList<String> books) {
         this.books = books;
     }
 
-    public BookList() {
+    public BookLibrary() {
         books = new ArrayList<>();
     }
 

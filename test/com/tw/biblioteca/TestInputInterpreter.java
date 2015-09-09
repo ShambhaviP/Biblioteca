@@ -28,8 +28,8 @@ public class TestInputInterpreter {
         ArrayList<String> listOfBooks = new ArrayList<>();
         Book book = new Book("Dracula", "Bram Stoker", 1920);
         listOfBooks.add(book.getFormattedBookDetails());
-        BookList bookList = new BookList(listOfBooks);
-        InputInterpreter inputInterpreter = new InputInterpreter(bookList);
+        BookLibrary bookLibrary = new BookLibrary(listOfBooks);
+        InputInterpreter inputInterpreter = new InputInterpreter(bookLibrary);
         inputInterpreter.interpret("1");
         String lineDivider = "\n-------------------------------------------------------\n";
 
@@ -43,8 +43,8 @@ public class TestInputInterpreter {
         Book book = new Book("Dracula", "Bram Stoker", 1920);
         ArrayList<String> listOfBooks = new ArrayList<>();
         listOfBooks.add(book.getFormattedBookDetails());
-        BookList bookList = new BookList(listOfBooks);
-        InputInterpreter inputInterpreter = new InputInterpreter(bookList);
+        BookLibrary bookLibrary = new BookLibrary(listOfBooks);
+        InputInterpreter inputInterpreter = new InputInterpreter(bookLibrary);
         inputInterpreter.interpret("0");
 
         assertEquals("\nSelect a valid option!\n", outContent.toString());
@@ -60,8 +60,8 @@ public class TestInputInterpreter {
         Book book = new Book("Dracula", "Bram Stoker", 1920);
         ArrayList<String> listOfBooks = new ArrayList<>();
         listOfBooks.add(book.getFormattedBookDetails());
-        BookList bookList = new BookList(listOfBooks);
-        InputInterpreter inputInterpreter = new InputInterpreter(bookList);
+        BookLibrary bookLibrary = new BookLibrary(listOfBooks);
+        InputInterpreter inputInterpreter = new InputInterpreter(bookLibrary);
 
         exit.expectSystemExit();
         inputInterpreter.interpret("2");

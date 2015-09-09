@@ -16,7 +16,7 @@ public class BibliotecaApplication {
         listOfBooks.add(book1.getFormattedBookDetails());
         listOfBooks.add(book2.getFormattedBookDetails());
         listOfBooks.add(book3.getFormattedBookDetails());
-        BookList bookList = new BookList(listOfBooks);
+        BookLibrary bookLibrary = new BookLibrary(listOfBooks);
         UserOption userOption1 = new UserOption("1.List Books (Enter 1 to choose this option)");
         UserOption userOption2 = new UserOption("2.Quit (Enter 2 to choose this option)");
         while (true) {
@@ -25,7 +25,7 @@ public class BibliotecaApplication {
             mainMenu.createOptionList(userOption2);
             mainMenu.displayOptionList();
             ReadUserInput readUserInput = new ReadUserInput();
-            InputInterpreter inputInterpreter = new InputInterpreter(bookList);
+            InputInterpreter inputInterpreter = new InputInterpreter(bookLibrary);
             inputInterpreter.interpret(readUserInput.read());
         }
     }

@@ -24,13 +24,13 @@ public class TestListBookOption {
         Book book = new Book("Dracula", "Bram Stoker", 1920);
         ArrayList<String> listOfBooks = new ArrayList<>();
         listOfBooks.add(book.getFormattedBookDetails());
-        BookList bookList = new BookList(listOfBooks);
-        ListBookOption listBookOption = new ListBookOption(bookList);
+        BookLibrary bookLibrary = new BookLibrary(listOfBooks);
+        ListBookOption listBookOption = new ListBookOption(bookLibrary);
         listBookOption.performOperation();
         String lineDivider = "\n-------------------------------------------------------\n";
 
 
-        assertEquals((lineDivider + String.format("%-20s%-20s%-20s", "Title", "Author", "Year Of Publish") + lineDivider + "\n"+String.format("%-20s%-20s%-20s", "Dracula", "Bram Stoker", 1920)+"\n"), outContent.toString());
+        assertEquals((lineDivider + String.format("%-20s%-20s%-20s", "Title", "Author", "Year Of Publish") + lineDivider + "\n" + String.format("%-20s%-20s%-20s", "Dracula", "Bram Stoker", 1920) + "\n"), outContent.toString());
     }
 
     @After
