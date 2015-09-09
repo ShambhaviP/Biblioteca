@@ -18,8 +18,10 @@ public class InputInterpreter {
             case 1:
                 listBookOption.performOperation();
                 break;
+            case 2:
+                System.exit(0);
             default:
-                System.out.println("\nSelect a valid option");
+                System.out.println("\nSelect a valid option!");
         }
     }
 }

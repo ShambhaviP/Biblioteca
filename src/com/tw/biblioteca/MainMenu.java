@@ -17,7 +17,7 @@ public class MainMenu {
     }
 
     public void displayOptionList() {
-        System.out.println("****MAIN MENU****");
+        System.out.println("\n****MAIN MENU****");
         for (String options : optionList) {
             System.out.println(options);
         }

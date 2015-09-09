@@ -45,7 +45,7 @@ public class TestMainMenu {
         mainMenu.createOptionList(userOption);
         mainMenu.displayOptionList();
 
-        assertEquals("****MAIN MENU****\nList Books\n", outContent.toString());
+        assertEquals("\n****MAIN MENU****\nList Books\n", outContent.toString());
     }
 
     @After
