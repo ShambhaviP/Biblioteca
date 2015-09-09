@@ -15,7 +15,11 @@ public class InputInterpreter {
     public void interpret(int choice) {
 
         switch (choice) {
-            case 1 : listBookOption.performOperation();
+            case 1:
+                listBookOption.performOperation();
+                break;
+            default:
+                System.out.println("\nSelect a valid option");
         }
     }
 }
