@@ -1,4 +1,4 @@
-//Biblioteca application launcher
+//launches Biblioteca Application and sets up the library
 package com.tw.biblioteca;
 
 import java.io.IOException;
