@@ -5,7 +5,7 @@ public class ListBookOption implements Operations {
 
     private BookLibrary books;
 
-    ListBookOption(BookLibrary books) {
+    public ListBookOption(BookLibrary books) {
         this.books = books;
     }
 

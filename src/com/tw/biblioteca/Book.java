@@ -7,7 +7,7 @@ public class Book {
     private String author;
     private int yearOfPublish;
 
-    Book(String bookName, String author, int yearOfPublish) {
+    public Book(String bookName, String author, int yearOfPublish) {
         this.bookName = bookName;
         this.author = author;
         this.yearOfPublish = yearOfPublish;
@@ -16,4 +16,5 @@ public class Book {
     public String getFormattedBookDetails() {
         return String.format("%-20s%-20s%-20d", bookName, author, yearOfPublish);
     }
+
 }

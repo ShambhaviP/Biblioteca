@@ -22,8 +22,8 @@ public class TestListBookOption {
     @Test
     public void shouldDisplayColumnHeadersAndPrintTheBookList() {
         Book book = new Book("Dracula", "Bram Stoker", 1920);
-        ArrayList<String> listOfBooks = new ArrayList<>();
-        listOfBooks.add(book.getFormattedBookDetails());
+        ArrayList<Book> listOfBooks = new ArrayList<>();
+        listOfBooks.add(book);
         BookLibrary bookLibrary = new BookLibrary(listOfBooks);
         ListBookOption listBookOption = new ListBookOption(bookLibrary);
         listBookOption.performOperation();

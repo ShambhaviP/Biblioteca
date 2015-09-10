@@ -21,11 +21,14 @@ public class TestBookLibrary {
     public void shouldReturnALibraryOfBooks() {
         Book book1 = new Book("Twilight", "Stephanie Meyer", 2006);
         Book book2 = new Book("Wuthering Heights", "Emily Bronte", 1777);
-        ArrayList<String> books = new ArrayList<>();
-        books.add(book1.getFormattedBookDetails());
-        books.add(book2.getFormattedBookDetails());
+        ArrayList<Book> books = new ArrayList<>();
+        books.add(book1);
+        books.add(book2);
         BookLibrary bookLibrary = new BookLibrary(books);
+        ArrayList<String> booksWithFormattedDetails = new ArrayList<>();
+        booksWithFormattedDetails.add(book1.getFormattedBookDetails());
+        booksWithFormattedDetails.add(book2.getFormattedBookDetails());
 
-        assertEquals(books, bookLibrary.getALibraryOfBooks());
+        assertEquals(booksWithFormattedDetails, bookLibrary.getALibraryOfBooks());
     }
 }
