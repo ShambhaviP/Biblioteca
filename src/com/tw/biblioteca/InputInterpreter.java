@@ -5,7 +5,7 @@ public class InputInterpreter {
 
     private ListBookOption listBookOption;
 
-    InputInterpreter(BookLibrary bookLibrary) {
+    public InputInterpreter(BookLibrary bookLibrary) {
         listBookOption = new ListBookOption(bookLibrary);
     }
 
@@ -17,8 +17,10 @@ public class InputInterpreter {
                 break;
             case "2":
                 System.exit(0);
+                break;
             default:
                 System.out.println("\nSelect a valid option!");
+                break;
         }
     }
 }

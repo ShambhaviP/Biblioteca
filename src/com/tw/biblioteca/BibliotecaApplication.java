@@ -19,6 +19,7 @@ public class BibliotecaApplication {
         BookLibrary bookLibrary = new BookLibrary(listOfBooks);
         UserOption userOption1 = new UserOption("1.List Books (Enter 1 to choose this option)");
         UserOption userOption2 = new UserOption("2.Quit (Enter 2 to choose this option)");
+
         while (true) {
             MainMenu mainMenu = new MainMenu();
             mainMenu.createOptionList(userOption1);

@@ -17,4 +17,14 @@ public class Book {
         return String.format("%-20s%-20s%-20d", bookName, author, yearOfPublish);
     }
 
+    @Override
+    public boolean equals(Object that) {
+        if (that != null && that.getClass() == this.getClass()) {
+            Book thatBook = (Book) that;
+            if (this == thatBook || this.bookName.equals(thatBook.bookName)) {
+                return true;
+            }
+        }
+        return false;
+    }
 }

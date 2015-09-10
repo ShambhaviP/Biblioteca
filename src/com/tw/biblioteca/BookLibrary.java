@@ -23,8 +23,8 @@ public class BookLibrary {
     public ArrayList<String> getALibraryOfBooks() {
 
         ArrayList<String> formattedLibraryOfBooks = new ArrayList<>();
-        for(Book aBook : availableBooks)
-        formattedLibraryOfBooks.add(aBook.getFormattedBookDetails());
+        for (Book aBook : availableBooks)
+            formattedLibraryOfBooks.add(aBook.getFormattedBookDetails());
         return formattedLibraryOfBooks;
     }
 }
