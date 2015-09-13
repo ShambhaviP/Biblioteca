@@ -6,12 +6,12 @@ import static org.junit.Assert.assertEquals;
 
 public class TestBook {
 
-   @Test
-   public void shouldReturnBookTitleAndAuthorAndYearOfPublish() {
-       Book book = new Book("Twilight", "Stephanie Meyer", 2006);
+    @Test
+    public void shouldReturnBookTitleAndAuthorAndYearOfPublish() {
+        Book book = new Book("Twilight", "Stephanie Meyer", 2006);
 
-       assertEquals((String.format("%-20s%-20s%-20d", "Twilight", "Stephanie Meyer", 2006)), book.getFormattedBookDetails());
-   }
+        assertEquals((String.format("%-20s%-20s%-20d", "Twilight", "Stephanie Meyer", 2006)), book.getFormattedBookDetails());
+    }
 
     @Test
     public void shouldReturnTrueIfTheNamesOfTwoBooksAreTheSame() {
@@ -36,4 +36,19 @@ public class TestBook {
 
         assertEquals(false, book1.equals(book2));
     }
+
+    @Test
+    public void shouldReturnTrueIfTwoObjectsAreTheSame() {
+        Book book = new Book("Harry Potter", "J.K. Rowling", 1999);
+
+        assertEquals(true, book.equals(book));
+    }
+
+    @Test
+    public void shouldReturnTheHashCodeForBookObject() {
+        Book book = new Book("Harry Potter", "J.K. Rowling", 1999);
+
+        assertEquals(-2030908574, book.hashCode());
+    }
+
 }

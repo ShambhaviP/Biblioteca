@@ -27,4 +27,15 @@ public class Book {
         }
         return false;
     }
+
+    @Override
+    public int hashCode() {
+        int hash = 0;
+        if (this != null) {
+            for (int i = 0; i < bookName.length(); i++) {
+                hash = Character.getNumericValue(bookName.charAt(i)) + (hash << 6) + (hash << 16) - hash;
+            }
+        }
+        return hash;
+    }
 }
