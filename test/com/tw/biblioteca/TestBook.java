@@ -20,4 +20,13 @@ public class TestBook {
 
         assertEquals(true, book1.equals(book2));
     }
+
+    @Test
+    public void shouldReturnFalseIfTheObjectsAreOfDifferentClass() {
+        Book book1 = new Book("Harry Potter", "J.K. Rowling", 1999);
+        //Book book2 = new Book("Harry Potter", "Someone else", 1980);
+        BookLibrary bookLibrary = new BookLibrary();
+
+        assertEquals(false, book1.equals(bookLibrary));
+    }
 }
