@@ -3,6 +3,7 @@ package com.tw.biblioteca;
 import org.junit.Test;
 
 import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertNotEquals;
 
 public class TestBook {
 
@@ -58,5 +59,13 @@ public class TestBook {
         Book book2 = new Book("Harry Potter", "Someone else", 1920);
 
         assertEquals(book1.hashCode(), book2.hashCode());
+    }
+
+    @Test
+    public void shouldReturnDifferentHashcodesForBooksWithDifferentNames() {
+        Book book1 = new Book("A tale of two cities", "Charles Dickens", 1790);
+        Book book2 = new Book("Oliver Twist", "Charles Dickens", 1790);
+
+        assertNotEquals(book1.hashCode(), book2.hashCode());
     }
 }
