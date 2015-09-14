@@ -20,7 +20,6 @@ public class TestInputInterpreter {
         System.setOut(new PrintStream(outContent));
     }
 
-
     @Test
     public void shouldDisplayListOfBooksWhenUserEntersOneAsTheChoice() {
 
@@ -36,7 +35,6 @@ public class TestInputInterpreter {
         assertEquals((lineDivider + String.format("%-20s%-20s%-20s", "Title", "Author", "Year Of Publish") + lineDivider + "\n" + String.format("%-20s%-20s%-20s", "Dracula", "Bram Stoker", 1920) + "\n"), outContent.toString());
     }
 
-
     @Test
     public void shouldNotifyTheUserWithAMessageWhenAnInvalidOptionIsEntered() {
 
@@ -51,12 +49,11 @@ public class TestInputInterpreter {
         assertEquals("\nSelect a valid option!\n", outContent.toString());
     }
 
-
     @Rule
     public final ExpectedSystemExit exit = ExpectedSystemExit.none();
 
     @Test
-    public void shouldPerformASystemExitWhenUserChoosesOptionNumberThreeToQuitApplication() {
+    public void shouldPerformASystemExitWhenUserChoosesOptionNumberFourToQuitApplication() {
 
         Book book = new Book("Dracula", "Bram Stoker", 1920);
         ArrayList<Book> availableBooks = new ArrayList<>();
