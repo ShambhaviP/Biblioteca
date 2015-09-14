@@ -34,10 +34,15 @@ public class BookLibrary {
             if (bookBeingMatched.equals(bookToBeSearched)) {
                 bookFound = bookBeingMatched;
                 checkedOutBooks.add(bookBeingMatched);
-                System.out.println("Thank you! Enjoy the book");
                 break;
             } else continue;
         }
-        availableBooks.remove(bookFound);
+        if(checkedOutBooks.contains(bookFound)) {
+            availableBooks.remove(bookFound);
+            System.out.println("Thank you! Enjoy the book");
+        }
+        else {
+            System.out.println("That book is not available");
+        }
     }
 }
