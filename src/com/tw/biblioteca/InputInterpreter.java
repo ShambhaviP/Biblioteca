@@ -26,6 +26,7 @@ public class InputInterpreter {
             case "3":
                 System.out.println("Please enter the name of the book you want to return");
                 returnBookOption.performOperation();
+                break;
             case "4":
                 System.exit(0);
                 break;
