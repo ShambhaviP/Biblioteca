@@ -1,4 +1,4 @@
-//to get column headers and a library of books
+//handles all the tasks related to library
 package com.tw.biblioteca;
 
 import java.util.ArrayList;
@@ -43,6 +43,23 @@ public class BookLibrary {
         }
         else {
             System.out.println("That book is not available");
+        }
+    }
+
+    public void returnBook(String nameOfTheBookToBeReturned) {
+
+        Book bookToBeReturned = new Book(nameOfTheBookToBeReturned, null, 0);
+        Book bookFoundInCheckedOutList = new Book(null, null, 0);
+        for (Book bookBeingMatched : checkedOutBooks) {
+            if (bookBeingMatched.equals(bookToBeReturned)) {
+                bookFoundInCheckedOutList = bookBeingMatched;
+                availableBooks.add(bookFoundInCheckedOutList);
+                break;
+            }
+            else continue;
+        }
+        if(availableBooks.contains(bookFoundInCheckedOutList)) {
+            checkedOutBooks.remove(bookFoundInCheckedOutList);
         }
     }
 }

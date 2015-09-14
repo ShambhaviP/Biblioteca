@@ -113,4 +113,22 @@ public class TestBookLibrary {
     public void cleanUpStreams() {
         System.setOut(null);
     }
+
+    @Test
+    public void shouldAddTheBookReturnedByCustomerToTheListOfAvailableBooks() {
+        Book book1 = new Book("Harry Potter", "J K Rowling", 1999);
+        Book book2 = new Book("The KiteRunner", "Khaled Hosseini", 2005);
+        ArrayList<Book> availableBooks = new ArrayList<>();
+        availableBooks.add(book1);
+        availableBooks.add(book2);
+        ArrayList<Book> checkedOutBooks = new ArrayList<>();
+        BookLibrary bookLibrary = new BookLibrary(availableBooks, checkedOutBooks);
+        bookLibrary.checkOutBooks("Harry Potter");
+        bookLibrary.returnBook("Harry Potter");
+        ArrayList<Book> bookListForComparison = new ArrayList<>();
+        bookListForComparison.add(book2);
+        bookListForComparison.add(book1);
+
+        assertEquals(bookListForComparison, availableBooks);
+    }
 }
