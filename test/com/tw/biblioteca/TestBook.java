@@ -73,11 +73,4 @@ public class TestBook {
 
         assertNotEquals(book1.hashCode(), book2.hashCode());
     }
-
-    /*@Test
-    public void shouldReturnZeroAsHashcodeForComparingWithANullObject() {
-        Book book = new Book(null, null, 0);
-
-        assertNotEquals(0, book.hashCode());
-    }*/
 }
