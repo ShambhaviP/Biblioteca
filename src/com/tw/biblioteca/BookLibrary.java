@@ -29,16 +29,15 @@ public class BookLibrary {
     public void checkOutBooks(String bookNameForCheckOut) {
 
         Book bookToBeSearched = new Book(bookNameForCheckOut, null, 0);
-        Book bookFound = new Book(null, null, 0);
         for (Book bookBeingMatched : availableBooks) {
             if (bookBeingMatched.equals(bookToBeSearched)) {
-                bookFound = bookBeingMatched;
+                bookToBeSearched = bookBeingMatched;
                 checkedOutBooks.add(bookBeingMatched);
                 break;
             } else continue;
         }
-        if(checkedOutBooks.contains(bookFound)) {
-            availableBooks.remove(bookFound);
+        if(checkedOutBooks.contains(bookToBeSearched)) {
+            availableBooks.remove(bookToBeSearched);
             System.out.println("Thank you! Enjoy the book.");
         }
         else {
@@ -49,18 +48,20 @@ public class BookLibrary {
     public void returnBook(String nameOfTheBookToBeReturned) {
 
         Book bookToBeReturned = new Book(nameOfTheBookToBeReturned, null, 0);
-        Book bookFoundInCheckedOutList = new Book(null, null, 0);
         for (Book bookBeingMatched : checkedOutBooks) {
             if (bookBeingMatched.equals(bookToBeReturned)) {
-                bookFoundInCheckedOutList = bookBeingMatched;
-                availableBooks.add(bookFoundInCheckedOutList);
+                bookToBeReturned = bookBeingMatched;
+                availableBooks.add(bookToBeReturned);
                 break;
             }
             else continue;
         }
-        if(availableBooks.contains(bookFoundInCheckedOutList)) {
-            checkedOutBooks.remove(bookFoundInCheckedOutList);
+        if(availableBooks.contains(bookToBeReturned)) {
+            checkedOutBooks.remove(bookToBeReturned);
             System.out.println("Thank you for returning the book.");
+        }
+        else {
+            System.out.println("That is not a valid book to return.");
         }
     }
 }
