@@ -30,7 +30,6 @@ public class TestListBookOption {
         listBookOption.performOperation();
         String lineDivider = "\n-------------------------------------------------------\n";
 
-
         assertEquals((lineDivider + String.format("%-20s%-20s%-20s", "Title", "Author", "Year Of Publish") + lineDivider + "\n" + String.format("%-20s%-20s%-20s", "Dracula", "Bram Stoker", 1920) + "\n"), outContent.toString());
     }
 
