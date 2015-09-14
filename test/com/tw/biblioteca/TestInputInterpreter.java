@@ -73,5 +73,5 @@ public class TestInputInterpreter {
     @After
     public void cleanUpStreams() {
         System.setOut(null);
-    }   
+    }
 }
