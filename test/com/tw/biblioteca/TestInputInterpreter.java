@@ -57,7 +57,7 @@ public class TestInputInterpreter {
     public final ExpectedSystemExit exit = ExpectedSystemExit.none();
 
     @Test
-    public void shouldPerformASystemExitWhenUserChoosesOptionNumberTwoToQuitApplication() {
+    public void shouldPerformASystemExitWhenUserChoosesOptionNumberThreeToQuitApplication() {
 
         Book book = new Book("Dracula", "Bram Stoker", 1920);
         ArrayList<Book> availableBooks = new ArrayList<>();
@@ -67,11 +67,11 @@ public class TestInputInterpreter {
         InputInterpreter inputInterpreter = new InputInterpreter(bookLibrary);
 
         exit.expectSystemExit();
-        inputInterpreter.interpret("2");
+        inputInterpreter.interpret("3");
     }
 
     @After
     public void cleanUpStreams() {
         System.setOut(null);
-    }
+    }   
 }

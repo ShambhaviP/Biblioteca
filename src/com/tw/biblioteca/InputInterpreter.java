@@ -5,8 +5,11 @@ public class InputInterpreter {
 
     private ListBookOption listBookOption;
 
+    private CheckOutBookOption checkOutBookOption;
+
     public InputInterpreter(BookLibrary bookLibrary) {
         listBookOption = new ListBookOption(bookLibrary);
+        checkOutBookOption = new CheckOutBookOption(bookLibrary);
     }
 
     public void interpret(String choice) {
@@ -16,6 +19,10 @@ public class InputInterpreter {
                 listBookOption.performOperation();
                 break;
             case "2":
+                System.out.println("Please enter the name of the book you want to check out");
+                checkOutBookOption.performOperation();
+                break;
+            case "3":
                 System.exit(0);
                 break;
             default:
