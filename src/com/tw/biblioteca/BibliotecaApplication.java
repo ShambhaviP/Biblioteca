@@ -12,11 +12,12 @@ public class BibliotecaApplication {
         Book book1 = new Book("Jane Eyre", "Charlotte Bronte", 1870);
         Book book2 = new Book("Oliver Twist", "Charles Dickens", 1791);
         Book book3 = new Book("Gone with the Wind", "Margaret Mitchell", 1937);
-        ArrayList<Book> listOfBooks = new ArrayList<>();
-        listOfBooks.add(book1);
-        listOfBooks.add(book2);
-        listOfBooks.add(book3);
-        BookLibrary bookLibrary = new BookLibrary(listOfBooks);
+        ArrayList<Book> availableBooks = new ArrayList<>();
+        availableBooks.add(book1);
+        availableBooks.add(book2);
+        availableBooks.add(book3);
+        ArrayList<Book> checkedOutBooks = new ArrayList<>();
+        BookLibrary bookLibrary = new BookLibrary(availableBooks, checkedOutBooks);
         UserOption userOption1 = new UserOption("1.List Books (Enter 1 to choose this option)");
         UserOption userOption2 = new UserOption("2.Quit (Enter 2 to choose this option)");
 

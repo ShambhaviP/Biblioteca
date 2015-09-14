@@ -25,10 +25,11 @@ public class TestInputInterpreter {
     @Test
     public void shouldDisplayListOfBooksWhenUserEntersOneAsTheChoice() {
 
-        ArrayList<Book> listOfBooks = new ArrayList<>();
+        ArrayList<Book> availableBooks = new ArrayList<>();
         Book book = new Book("Dracula", "Bram Stoker", 1920);
-        listOfBooks.add(book);
-        BookLibrary bookLibrary = new BookLibrary(listOfBooks);
+        availableBooks.add(book);
+        ArrayList<Book> checkedOutBooks = new ArrayList<>();
+        BookLibrary bookLibrary = new BookLibrary(availableBooks, checkedOutBooks);
         InputInterpreter inputInterpreter = new InputInterpreter(bookLibrary);
         inputInterpreter.interpret("1");
         String lineDivider = "\n-------------------------------------------------------\n";
@@ -41,9 +42,10 @@ public class TestInputInterpreter {
     public void shouldNotifyTheUserWithAMessageWhenAnInvalidOptionIsEntered() {
 
         Book book = new Book("Dracula", "Bram Stoker", 1920);
-        ArrayList<Book> listOfBooks = new ArrayList<>();
-        listOfBooks.add(book);
-        BookLibrary bookLibrary = new BookLibrary(listOfBooks);
+        ArrayList<Book> availableBooks = new ArrayList<>();
+        availableBooks.add(book);
+        ArrayList<Book> checkedOutBooks = new ArrayList<>();
+        BookLibrary bookLibrary = new BookLibrary(availableBooks, checkedOutBooks);
         InputInterpreter inputInterpreter = new InputInterpreter(bookLibrary);
         inputInterpreter.interpret("0");
 
@@ -58,9 +60,10 @@ public class TestInputInterpreter {
     public void shouldPerformASystemExitWhenUserChoosesOptionNumberTwoToQuitApplication() {
 
         Book book = new Book("Dracula", "Bram Stoker", 1920);
-        ArrayList<Book> listOfBooks = new ArrayList<>();
-        listOfBooks.add(book);
-        BookLibrary bookLibrary = new BookLibrary(listOfBooks);
+        ArrayList<Book> availableBooks = new ArrayList<>();
+        availableBooks.add(book);
+        ArrayList<Book> checkedOutBooks = new ArrayList<>();
+        BookLibrary bookLibrary = new BookLibrary(availableBooks, checkedOutBooks);
         InputInterpreter inputInterpreter = new InputInterpreter(bookLibrary);
 
         exit.expectSystemExit();

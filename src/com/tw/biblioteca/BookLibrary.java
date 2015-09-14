@@ -5,14 +5,12 @@ import java.util.ArrayList;
 
 public class BookLibrary {
 
-    private ArrayList<Book> availableBooks;
+    private ArrayList<Book> availableBooks = new ArrayList<>();
+    private ArrayList<Book> checkedOutBooks = new ArrayList<>();
 
-    public BookLibrary(ArrayList<Book> availableBooks) {
+    public BookLibrary(ArrayList<Book> availableBooks, ArrayList<Book> checkedOutBooks) {
         this.availableBooks = availableBooks;
-    }
-
-    public BookLibrary() {
-        availableBooks = new ArrayList<>();
+        this.checkedOutBooks = checkedOutBooks;
     }
 
     public String getColumnHeaders() {
@@ -26,5 +24,19 @@ public class BookLibrary {
         for (Book aBook : availableBooks)
             formattedLibraryOfBooks.add(aBook.getFormattedBookDetails());
         return formattedLibraryOfBooks;
+    }
+
+    public void checkOutBooks(String bookNameForCheckOut) {
+
+        Book bookToBeSearched = new Book(bookNameForCheckOut, null, 0);
+        Book bookFound = new Book(null, null, 0);
+        for (Book bookBeingMatched : availableBooks) {
+            if (bookBeingMatched.equals(bookToBeSearched)) {
+                bookFound = bookBeingMatched;
+                checkedOutBooks.add(bookBeingMatched);
+                break;
+            } else continue;
+        }
+        availableBooks.remove(bookFound);
     }
 }

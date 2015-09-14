@@ -2,6 +2,8 @@ package com.tw.biblioteca;
 
 import org.junit.Test;
 
+import java.util.ArrayList;
+
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertNotEquals;
 
@@ -23,11 +25,14 @@ public class TestBook {
     }
 
     @Test
-    public void shouldReturnFalseIfTheObjectsAreOfDifferentClass() {
-        Book book1 = new Book("Harry Potter", "J.K. Rowling", 1999);
-        BookLibrary bookLibrary = new BookLibrary();
+    public void shouldReturnFalseIfTheObjectsAreOfDifferentClasses() {
+        Book book = new Book("Harry Potter", "J.K. Rowling", 1999);
+        ArrayList<Book> availableBooks = new ArrayList<>();
+        availableBooks.add(book);
+        ArrayList<Book> checkedOutBooks = new ArrayList<>();
+        BookLibrary bookLibrary = new BookLibrary(availableBooks, checkedOutBooks);
 
-        assertEquals(false, book1.equals(bookLibrary));
+        assertEquals(false, book.equals(bookLibrary));
     }
 
     @Test
@@ -68,4 +73,11 @@ public class TestBook {
 
         assertNotEquals(book1.hashCode(), book2.hashCode());
     }
+
+    /*@Test
+    public void shouldReturnZeroAsHashcodeForComparingWithANullObject() {
+        Book book = new Book(null, null, 0);
+
+        assertNotEquals(0, book.hashCode());
+    }*/
 }

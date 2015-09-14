@@ -22,9 +22,10 @@ public class TestListBookOption {
     @Test
     public void shouldDisplayColumnHeadersAndPrintTheBookList() {
         Book book = new Book("Dracula", "Bram Stoker", 1920);
-        ArrayList<Book> listOfBooks = new ArrayList<>();
-        listOfBooks.add(book);
-        BookLibrary bookLibrary = new BookLibrary(listOfBooks);
+        ArrayList<Book> availableBooks = new ArrayList<>();
+        availableBooks.add(book);
+        ArrayList<Book> checkedOutBooks = new ArrayList<>();
+        BookLibrary bookLibrary = new BookLibrary(availableBooks, checkedOutBooks);
         ListBookOption listBookOption = new ListBookOption(bookLibrary);
         listBookOption.performOperation();
         String lineDivider = "\n-------------------------------------------------------\n";
