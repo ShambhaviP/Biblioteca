@@ -32,7 +32,7 @@ public class TestReturnBookOption {
     }
 
     @Test
-    public void shouldPrintMessageForSuccessfulReturnOfABook() {
+    public void shouldPrintAppropriateMessageForSuccessfulReturnOfABook() {
         Book book1 = new Book("Harry Potter", "J K Rowling", 1999);
         Book book2 = new Book("The KiteRunner", "Khaled Hosseini", 2005);
         ArrayList<Book> availableBooks = new ArrayList<>();
@@ -47,6 +47,24 @@ public class TestReturnBookOption {
         returnBookOption.performOperation();
 
         assertEquals("Thank You for returning the book.\n", outContent.toString());
+    }
+
+    @Test
+    public void shouldPrintAppropriateMessageForUnsuccessfulReturnOfABook() {
+        Book book1 = new Book("Harry Potter", "J K Rowling", 1999);
+        Book book2 = new Book("The KiteRunner", "Khaled Hosseini", 2005);
+        ArrayList<Book> availableBooks = new ArrayList<>();
+        availableBooks.add(book1);
+        availableBooks.add(book2);
+        ArrayList<Book> checkedOutBooks = new ArrayList<>();
+        BookLibrary bookLibrary = new BookLibrary(availableBooks, checkedOutBooks);
+        bookLibrary.checkOutBooks("Harry Potter");
+        ReturnBookOption returnBookOption = new ReturnBookOption(bookLibrary);
+        ByteArrayInputStream inputStream = new ByteArrayInputStream("War And Peace".getBytes());
+        System.setIn(inputStream);
+        returnBookOption.performOperation();
+
+        assertEquals("That is not a valid book.\n", outContent.toString());
     }
 
     @After
