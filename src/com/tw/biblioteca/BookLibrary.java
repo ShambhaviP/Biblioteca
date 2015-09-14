@@ -34,6 +34,7 @@ public class BookLibrary {
             if (bookBeingMatched.equals(bookToBeSearched)) {
                 bookFound = bookBeingMatched;
                 checkedOutBooks.add(bookBeingMatched);
+                System.out.println("Thank you! Enjoy the book");
                 break;
             } else continue;
         }
