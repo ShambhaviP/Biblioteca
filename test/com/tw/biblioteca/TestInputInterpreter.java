@@ -5,7 +5,6 @@ import org.junit.Before;
 import org.junit.Rule;
 import org.junit.Test;
 import org.junit.contrib.java.lang.system.ExpectedSystemExit;
-
 import java.io.ByteArrayOutputStream;
 import java.io.PrintStream;
 import java.util.ArrayList;
@@ -67,7 +66,7 @@ public class TestInputInterpreter {
         InputInterpreter inputInterpreter = new InputInterpreter(bookLibrary);
 
         exit.expectSystemExit();
-        inputInterpreter.interpret("3");
+        inputInterpreter.interpret("4");
     }
 
     @After
