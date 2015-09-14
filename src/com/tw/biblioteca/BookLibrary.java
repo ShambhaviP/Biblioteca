@@ -39,10 +39,10 @@ public class BookLibrary {
         }
         if(checkedOutBooks.contains(bookFound)) {
             availableBooks.remove(bookFound);
-            System.out.println("Thank you! Enjoy the book");
+            System.out.println("Thank you! Enjoy the book.");
         }
         else {
-            System.out.println("That book is not available");
+            System.out.println("That book is not available.");
         }
     }
 
@@ -60,6 +60,7 @@ public class BookLibrary {
         }
         if(availableBooks.contains(bookFoundInCheckedOutList)) {
             checkedOutBooks.remove(bookFoundInCheckedOutList);
+            System.out.println("Thank you for returning the book.");
         }
     }
 }

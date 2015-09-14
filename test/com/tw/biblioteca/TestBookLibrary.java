@@ -92,7 +92,7 @@ public class TestBookLibrary {
         BookLibrary bookLibrary = new BookLibrary(availableBooks, checkedOutBooks);
         bookLibrary.checkOutBooks("Harry Potter");
 
-        assertEquals("Thank you! Enjoy the book\n", outContent.toString());
+        assertEquals("Thank you! Enjoy the book.\n", outContent.toString());
     }
 
     @Test
@@ -106,7 +106,7 @@ public class TestBookLibrary {
         BookLibrary bookLibrary = new BookLibrary(availableBooks, checkedOutBooks);
         bookLibrary.checkOutBooks("Nefertiti");
 
-        assertEquals("That book is not available\n", outContent.toString());
+        assertEquals("That book is not available.\n", outContent.toString());
     }
 
     @After
@@ -130,5 +130,20 @@ public class TestBookLibrary {
         bookListForComparison.add(book1);
 
         assertEquals(bookListForComparison, availableBooks);
+    }
+
+    @Test
+    public void shouldPrintAMessageForSuccessfulReturn() {
+        Book book1 = new Book("Harry Potter", "J K Rowling", 1999);
+        Book book2 = new Book("The KiteRunner", "Khaled Hosseini", 2005);
+        ArrayList<Book> availableBooks = new ArrayList<>();
+        availableBooks.add(book1);
+        availableBooks.add(book2);
+        ArrayList<Book> checkedOutBooks = new ArrayList<>();
+        BookLibrary bookLibrary = new BookLibrary(availableBooks, checkedOutBooks);
+        bookLibrary.checkOutBooks("Harry Potter");
+        bookLibrary.returnBook("Harry Potter");
+
+        assertEquals("Thank you! Enjoy the book.\nThank you for returning the book.\n", outContent.toString());
     }
 }
