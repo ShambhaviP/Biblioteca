@@ -11,7 +11,6 @@ public class TestCheckOutBookOption {
     public void shouldReturnTheBookNameEnteredByTheUser() {
         ReadUserInput readUserInput = new ReadUserInput();
         ByteArrayInputStream inputStream = new ByteArrayInputStream("Harry Potter".getBytes());
-
         System.setIn(inputStream);
         String input = readUserInput.read();
         System.setIn(System.in);

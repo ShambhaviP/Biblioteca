@@ -4,12 +4,13 @@ package com.tw.biblioteca;
 public class InputInterpreter {
 
     private ListBookOption listBookOption;
-
     private CheckOutBookOption checkOutBookOption;
+    private ReturnBookOption returnBookOption;
 
     public InputInterpreter(BookLibrary bookLibrary) {
         listBookOption = new ListBookOption(bookLibrary);
         checkOutBookOption = new CheckOutBookOption(bookLibrary);
+        returnBookOption = new ReturnBookOption(bookLibrary);
     }
 
     public void interpret(String choice) {
@@ -23,6 +24,9 @@ public class InputInterpreter {
                 checkOutBookOption.performOperation();
                 break;
             case "3":
+                System.out.println("Please enter the name of the book you want to return");
+                returnBookOption.performOperation();
+            case "4":
                 System.exit(0);
                 break;
             default:
