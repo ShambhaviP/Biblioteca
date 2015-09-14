@@ -19,8 +19,8 @@ public class BibliotecaApplication {
         ArrayList<Book> checkedOutBooks = new ArrayList<>();
         BookLibrary bookLibrary = new BookLibrary(availableBooks, checkedOutBooks);
         UserOption userOption1 = new UserOption("1.List Books (Enter 1 to choose this option)");
-        UserOption userOption2 = new UserOption("2.Checkout A Book (Enter 2 to choose this option");
-        UserOption userOption3 = new UserOption("3.Return A Book (Enter 3 to choose this option");
+        UserOption userOption2 = new UserOption("2.Checkout A Book (Enter 2 to choose this option)");
+        UserOption userOption3 = new UserOption("3.Return A Book (Enter 3 to choose this option)");
         UserOption userOption4 = new UserOption("4.Quit (Enter 4 to choose this option)");
 
         while (true) {

@@ -14,6 +14,11 @@ public class CheckOutBookOption implements Operations {
 
         ReadUserInput readUserInput = new ReadUserInput();
         String bookToCheckOut = readUserInput.read();
-        bookLibrary.checkOutBooks(bookToCheckOut);
+        if(bookLibrary.checkOutBooks(bookToCheckOut)) {
+            System.out.println("Thank You! Enjoy the book.");
+        }
+        else {
+            System.out.println("That book is not available.");
+        }
     }
 }

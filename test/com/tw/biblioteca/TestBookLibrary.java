@@ -1,11 +1,6 @@
 package com.tw.biblioteca;
 
-import org.junit.After;
-import org.junit.Before;
 import org.junit.Test;
-
-import java.io.ByteArrayOutputStream;
-import java.io.PrintStream;
 import java.util.ArrayList;
 
 import static org.junit.Assert.assertEquals;
@@ -24,8 +19,6 @@ public class TestBookLibrary {
 
         assertEquals(("\n-------------------------------------------------------\n" + String.format("%-20s%-20s%-20s", "Title", "Author", "Year Of Publish") + "\n-------------------------------------------------------\n"), bookLibrary.getColumnHeaders());
     }
-
-    private final ByteArrayOutputStream outContent = new ByteArrayOutputStream();
 
     @Test
     public void shouldReturnALibraryOfBooks() {
@@ -54,7 +47,6 @@ public class TestBookLibrary {
         BookLibrary bookLibrary = new BookLibrary(availableBooks, checkedOutBooks);
         ArrayList<Book> bookListForComparison = new ArrayList<>();
         bookListForComparison.add(book1);
-
         bookLibrary.checkOutBooks("Harry Potter");
 
         assertEquals(bookListForComparison, checkedOutBooks);
@@ -71,18 +63,14 @@ public class TestBookLibrary {
         BookLibrary bookLibrary = new BookLibrary(availableBooks, checkedOutBooks);
         ArrayList<Book> bookListForComparison = new ArrayList<>();
         bookListForComparison.add(book2);
-
         bookLibrary.checkOutBooks("Harry Potter");
 
         assertEquals(bookListForComparison, availableBooks);
     }
-    @Before
-    public void setUpStreams() {
-        System.setOut(new PrintStream(outContent));
-    }
+
 
     @Test
-    public void shouldPrintTheSuccessfulCheckOutMessageWhenABookIsCheckedOutSuccessfully() {
+    public void shouldReturnTrueWhenABookIsCheckedOutSuccessfully() {
         Book book1 = new Book("Harry Potter", "J K Rowling", 1999);
         Book book2 = new Book("The KiteRunner", "Khaled Hosseini", 2005);
         ArrayList<Book> availableBooks = new ArrayList<>();
@@ -90,13 +78,12 @@ public class TestBookLibrary {
         availableBooks.add(book2);
         ArrayList<Book> checkedOutBooks = new ArrayList<>();
         BookLibrary bookLibrary = new BookLibrary(availableBooks, checkedOutBooks);
-        bookLibrary.checkOutBooks("Harry Potter");
 
-        assertEquals("Thank you! Enjoy the book.\n", outContent.toString());
+        assertEquals(true, bookLibrary.checkOutBooks("Harry Potter"));
     }
 
     @Test
-    public void shouldPrintTheUnsuccessfulCheckOutMessageWhenABookIsNotAvailableForCheckout() {
+    public void shouldReturnFalseWhenABookIsNotAvailableForCheckout() {
         Book book1 = new Book("Harry Potter", "J K Rowling", 1999);
         Book book2 = new Book("The KiteRunner", "Khaled Hosseini", 2005);
         ArrayList<Book> availableBooks = new ArrayList<>();
@@ -104,14 +91,8 @@ public class TestBookLibrary {
         availableBooks.add(book2);
         ArrayList<Book> checkedOutBooks = new ArrayList<>();
         BookLibrary bookLibrary = new BookLibrary(availableBooks, checkedOutBooks);
-        bookLibrary.checkOutBooks("Nefertiti");
 
-        assertEquals("That book is not available.\n", outContent.toString());
-    }
-
-    @After
-    public void cleanUpStreams() {
-        System.setOut(null);
+        assertEquals(false, bookLibrary.checkOutBooks("Nefertiti"));
     }
 
     @Test
@@ -133,7 +114,7 @@ public class TestBookLibrary {
     }
 
     @Test
-    public void shouldPrintAMessageForSuccessfulReturnOfABook() {
+    public void shouldReturnTrueForSuccessfulReturnOfABook() {
         Book book1 = new Book("Harry Potter", "J K Rowling", 1999);
         Book book2 = new Book("The KiteRunner", "Khaled Hosseini", 2005);
         ArrayList<Book> availableBooks = new ArrayList<>();
@@ -142,13 +123,12 @@ public class TestBookLibrary {
         ArrayList<Book> checkedOutBooks = new ArrayList<>();
         BookLibrary bookLibrary = new BookLibrary(availableBooks, checkedOutBooks);
         bookLibrary.checkOutBooks("Harry Potter");
-        bookLibrary.returnBook("Harry Potter");
 
-        assertEquals("Thank you! Enjoy the book.\nThank you for returning the book.\n", outContent.toString());
+        assertEquals(true, bookLibrary.returnBook("Harry Potter"));
     }
 
     @Test
-    public void shouldPrintAMessageForUnsuccessfulReturnOfABook() {
+    public void shouldReturnFalseForUnsuccessfulReturnOfABook() {
         Book book1 = new Book("Harry Potter", "J K Rowling", 1999);
         Book book2 = new Book("The KiteRunner", "Khaled Hosseini", 2005);
         ArrayList<Book> availableBooks = new ArrayList<>();
@@ -157,8 +137,7 @@ public class TestBookLibrary {
         ArrayList<Book> checkedOutBooks = new ArrayList<>();
         BookLibrary bookLibrary = new BookLibrary(availableBooks, checkedOutBooks);
         bookLibrary.checkOutBooks("Harry Potter");
-        bookLibrary.returnBook("Treasure Island");
 
-        assertEquals("Thank you! Enjoy the book.\nThat is not a valid book to return.\n", outContent.toString());
+        assertEquals(false, bookLibrary.returnBook("Treasure Island"));
     }
 }

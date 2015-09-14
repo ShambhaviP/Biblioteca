@@ -26,42 +26,31 @@ public class BookLibrary {
         return formattedLibraryOfBooks;
     }
 
-    public void checkOutBooks(String bookNameForCheckOut) {
+    public boolean checkOutBooks(String bookNameForCheckOut) {
 
         Book bookToBeSearched = new Book(bookNameForCheckOut, null, 0);
         for (Book bookBeingMatched : availableBooks) {
             if (bookBeingMatched.equals(bookToBeSearched)) {
-                bookToBeSearched = bookBeingMatched;
                 checkedOutBooks.add(bookBeingMatched);
-                break;
-            } else continue;
+                availableBooks.remove(bookToBeSearched);
+                return true;
+            }
         }
-        if(checkedOutBooks.contains(bookToBeSearched)) {
-            availableBooks.remove(bookToBeSearched);
-            System.out.println("Thank you! Enjoy the book.");
-        }
-        else {
-            System.out.println("That book is not available.");
-        }
+
+        return false;
     }
 
-    public void returnBook(String nameOfTheBookToBeReturned) {
+
+    public boolean returnBook(String nameOfTheBookToBeReturned) {
 
         Book bookToBeReturned = new Book(nameOfTheBookToBeReturned, null, 0);
         for (Book bookBeingMatched : checkedOutBooks) {
             if (bookBeingMatched.equals(bookToBeReturned)) {
-                bookToBeReturned = bookBeingMatched;
-                availableBooks.add(bookToBeReturned);
-                break;
+                availableBooks.add(bookBeingMatched);
+                checkedOutBooks.remove(bookBeingMatched);
+                return true;
             }
-            else continue;
         }
-        if(availableBooks.contains(bookToBeReturned)) {
-            checkedOutBooks.remove(bookToBeReturned);
-            System.out.println("Thank you for returning the book.");
-        }
-        else {
-            System.out.println("That is not a valid book to return.");
-        }
+        return false;
     }
 }
