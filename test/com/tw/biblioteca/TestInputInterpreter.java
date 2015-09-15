@@ -22,13 +22,16 @@ public class TestInputInterpreter {
 
     @Test
     public void shouldDisplayListOfBooksWhenUserEntersOneAsTheChoice() {
-
         ArrayList<Book> availableBooks = new ArrayList<>();
         Book book = new Book("Dracula", "Bram Stoker", 1920);
         availableBooks.add(book);
         ArrayList<Book> checkedOutBooks = new ArrayList<>();
         BookLibrary bookLibrary = new BookLibrary(availableBooks, checkedOutBooks);
-        InputInterpreter inputInterpreter = new InputInterpreter(bookLibrary);
+        Movie movie1 = new Movie("Titanic", 1997, "James Cameron", "8.5");
+        ArrayList<Movie> movies = new ArrayList<>();
+        movies.add(movie1);
+        MovieLibrary movieLibrary = new MovieLibrary(movies);
+        InputInterpreter inputInterpreter = new InputInterpreter(bookLibrary, movieLibrary);
         inputInterpreter.interpret("1");
         String lineDivider = "\n-------------------------------------------------------\n";
 
@@ -37,33 +40,56 @@ public class TestInputInterpreter {
 
     @Test
     public void shouldNotifyTheUserWithAMessageWhenAnInvalidOptionIsEntered() {
-
         Book book = new Book("Dracula", "Bram Stoker", 1920);
         ArrayList<Book> availableBooks = new ArrayList<>();
         availableBooks.add(book);
         ArrayList<Book> checkedOutBooks = new ArrayList<>();
         BookLibrary bookLibrary = new BookLibrary(availableBooks, checkedOutBooks);
-        InputInterpreter inputInterpreter = new InputInterpreter(bookLibrary);
+        Movie movie1 = new Movie("Titanic", 1997, "James Cameron", "8.5");
+        ArrayList<Movie> movies = new ArrayList<>();
+        movies.add(movie1);
+        MovieLibrary movieLibrary = new MovieLibrary(movies);
+        InputInterpreter inputInterpreter = new InputInterpreter(bookLibrary, movieLibrary);
         inputInterpreter.interpret("0");
 
         assertEquals("\nSelect a valid option!\n", outContent.toString());
+    }
+
+    @Test
+    public void shouldDisplayACollectionOfMoviesWhenUserChoosesOptionFour() {
+        Book book = new Book("Dracula", "Bram Stoker", 1920);
+        ArrayList<Book> availableBooks = new ArrayList<>();
+        availableBooks.add(book);
+        ArrayList<Book> checkedOutBooks = new ArrayList<>();
+        BookLibrary bookLibrary = new BookLibrary(availableBooks, checkedOutBooks);
+        Movie movie1 = new Movie("Titanic", 1997, "James Cameron", "8.5");
+        ArrayList<Movie> movies = new ArrayList<>();
+        movies.add(movie1);
+        MovieLibrary movieLibrary = new MovieLibrary(movies);
+        InputInterpreter inputInterpreter = new InputInterpreter(bookLibrary, movieLibrary);
+        inputInterpreter.interpret("4");
+
+        assertEquals((String.format("%-20s%-20s%-20s%-20s", "MOVIE", "YEAR OF RELEASE", "DIRECTOR", "RATING") + "\n" + String.format("%-20s%-20s%-20s%-20s", "Titanic", 1997, "James Cameron", "8.5") + "\n"), outContent.toString());
     }
 
     @Rule
     public final ExpectedSystemExit exit = ExpectedSystemExit.none();
 
     @Test
-    public void shouldPerformASystemExitWhenUserChoosesOptionNumberFourToQuitApplication() {
-
+    public void shouldPerformASystemExitWhenUserChoosesOptionNumberFiveToQuitApplication() {
         Book book = new Book("Dracula", "Bram Stoker", 1920);
         ArrayList<Book> availableBooks = new ArrayList<>();
         availableBooks.add(book);
         ArrayList<Book> checkedOutBooks = new ArrayList<>();
         BookLibrary bookLibrary = new BookLibrary(availableBooks, checkedOutBooks);
-        InputInterpreter inputInterpreter = new InputInterpreter(bookLibrary);
+        Movie movie1 = new Movie("Titanic", 1997, "James Cameron", "8.5");
+        ArrayList<Movie> movies = new ArrayList<>();
+        movies.add(movie1);
+        MovieLibrary movieLibrary = new MovieLibrary(movies);
+        InputInterpreter inputInterpreter = new InputInterpreter(bookLibrary, movieLibrary);
 
         exit.expectSystemExit();
-        inputInterpreter.interpret("4");
+        inputInterpreter.interpret("5");
     }
 
     @After
