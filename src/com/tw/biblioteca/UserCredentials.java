@@ -14,4 +14,8 @@ public class UserCredentials {
     public String getLibraryNumber() {
         return libraryNumber;
     }
+
+    public String getPassword() {
+        return password;
+    }
 }
