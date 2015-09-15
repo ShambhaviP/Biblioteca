@@ -29,4 +29,15 @@ public class Movie {
         }
         return false;
     }
+
+    @Override
+    public int hashCode() {
+        int hash = 0;
+        if (this != null) {
+            for (int i = 0; i < movieName.length(); i++) {
+                hash = Character.getNumericValue(movieName.charAt(i)) + (hash << 6) + (hash << 16) - hash;
+            }
+        }
+        return hash;
+    }
 }
