@@ -27,4 +27,11 @@ public class TestMovie {
 
         assertEquals(false, movie.equals(book));
     }
+
+    @Test
+    public void shouldReturnTrueIfTwoObjectsAreTheSame() {
+        Movie movie = new Movie("Cleopatra", 1999, "Franc Roddam", "6.8");
+
+        assertEquals(true, movie.equals(movie));
+    }
 }
