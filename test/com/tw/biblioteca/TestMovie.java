@@ -47,6 +47,15 @@ public class TestMovie {
     public void shouldReturnTheSameHashCodeForComparingSameMovieObjects() {
         Movie movie1 = new Movie("Cleopatra", 1999, "Franc Roddam", "6.8");
         Movie movie2 = new Movie("Cleopatra", 1999, "Franc Roddam", "6.8");
+
+        assertEquals(movie1.hashCode(), movie2.hashCode());
+    }
+
+    @Test
+    public void shouldReturnTheSameHashCodeForComparingMovieObjectsHavingSameMovieName() {
+        Movie movie1 = new Movie("Cleopatra", 1999, "Franc Roddam", "6.8");
+        Movie movie2 = new Movie("Cleopatra", 1962, "Someone Else", "7.5");
+
         assertEquals(movie1.hashCode(), movie2.hashCode());
     }
 }

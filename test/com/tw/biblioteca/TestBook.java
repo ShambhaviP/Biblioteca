@@ -67,7 +67,7 @@ public class TestBook {
     }
 
     @Test
-    public void shouldReturnDifferentHashcodesForBooksWithDifferentNames() {
+    public void shouldReturnDifferentHashCodesForBooksWithDifferentNames() {
         Book book1 = new Book("A tale of two cities", "Charles Dickens", 1790);
         Book book2 = new Book("Oliver Twist", "Charles Dickens", 1790);
 
