@@ -19,4 +19,12 @@ public class TestMovie {
 
         assertEquals(true, movie1.equals(movie2));
     }
+
+    @Test
+    public void shouldReturnFalseIfTheObjectsAreOfDifferentClasses() {
+        Book book = new Book("Harry Potter", "J.K. Rowling", 1999);
+        Movie movie = new Movie("Cleopatra", 1999, "Franc Roddam", "6.8");
+
+        assertEquals(false, movie.equals(book));
+    }
 }
