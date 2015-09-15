@@ -37,4 +37,16 @@ public class TestMovieLibrary {
         movieLibrary.checkOutMovie("Roman Holiday");
         assertEquals(movies, movieCollectionForComparison);
     }
+
+    @Test
+    public void shouldReturnTrueIfAMovieIsCheckedOutSuccessfully() {
+        Movie movie1 = new Movie("Titanic", 1997, "James Cameron", "8.5");
+        Movie movie2 = new Movie("Roman Holiday", 1953, "William Wyler", "9.0");
+        ArrayList<Movie> movies = new ArrayList<>();
+        movies.add(movie1);
+        movies.add(movie2);
+        MovieLibrary movieLibrary = new MovieLibrary(movies);
+
+        assertEquals(true, movieLibrary.checkOutMovie("Titanic"));
+    }
 }
