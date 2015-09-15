@@ -8,9 +8,15 @@ public class TestMovie {
 
     @Test
     public void shouldReturnNameYearDirectorAndRatingOfAMovie() {
-
         Movie movie = new Movie("Cleopatra", 1999, "Franc Roddam", "6.8");
-
         assertEquals(String.format("%-20s%-20s%-20s%-20s", "Cleopatra", 1999, "Franc Roddam", "6.8"), movie.getFormattedMovieDetails());
+    }
+
+    @Test
+    public void shouldReturnTrueIfTheNamesOfTwoMoviesAreTheSame() {
+        Movie movie1 = new Movie("Cleopatra", 1999, "Franc Roddam", "6.8");
+        Movie movie2 = new Movie("Cleopatra", 1962, "Someone Else", "7.5");
+
+        assertEquals(true, movie1.equals(movie2));
     }
 }

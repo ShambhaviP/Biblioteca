@@ -18,4 +18,15 @@ public class Movie {
     public String getFormattedMovieDetails() {
         return String.format("%-20s%-20s%-20s%-20s", movieName, yearOfRelease, director, rating);
     }
+
+    @Override
+    public boolean equals(Object that) {
+        if (that != null && that.getClass() == this.getClass()) {
+            Movie thatMovie = (Movie) that;
+            if (this == thatMovie || this.movieName.equals(thatMovie.movieName)) {
+                return true;
+            }
+        }
+        return false;
+    }
 }

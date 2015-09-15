@@ -20,7 +20,7 @@ public class BibliotecaApplication {
         BookLibrary bookLibrary = new BookLibrary(availableBooks, checkedOutBooks);
 
         Movie movie1 = new Movie("Titanic", 1997, "James Cameron", "8.0");
-        Movie movie2 = new Movie("Cleopatra", 1999, "Franc Roddam", "7.5");
+        Movie movie2 = new Movie("Cleopatra", 1999, "Franc Roddam", "unrated");
         Movie movie3 = new Movie("Roman Holiday", 1953, "William Wyler", "8.5");
         ArrayList<Movie> availableMovies = new ArrayList<>();
         availableMovies.add(movie1);
