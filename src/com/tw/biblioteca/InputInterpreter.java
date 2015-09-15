@@ -7,12 +7,14 @@ public class InputInterpreter {
     private CheckOutBookOption checkOutBookOption;
     private ReturnBookOption returnBookOption;
     private ListMoviesOption listMoviesOption;
+    private CheckOutMovieOption checkOutMovieOption;
 
     public InputInterpreter(BookLibrary bookLibrary,MovieLibrary movieLibrary) {
         listBookOption = new ListBookOption(bookLibrary);
         checkOutBookOption = new CheckOutBookOption(bookLibrary);
         returnBookOption = new ReturnBookOption(bookLibrary);
         listMoviesOption = new ListMoviesOption(movieLibrary);
+        checkOutMovieOption = new CheckOutMovieOption(movieLibrary);
     }
 
     public void interpret(String choice) {
@@ -30,8 +32,13 @@ public class InputInterpreter {
                 returnBookOption.performOperation();
                 break;
             case "4":
-                listMoviesOption.performOperation();break;
+                listMoviesOption.performOperation();
+                break;
             case "5":
+                System.out.println("Please enter the name of the movie you want to check out");
+                checkOutMovieOption.performOperation();
+                break;
+            case "6":
                 System.exit(0);
                 break;
             default:

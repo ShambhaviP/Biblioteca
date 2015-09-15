@@ -32,7 +32,8 @@ public class BibliotecaApplication {
         UserOption userOption2 = new UserOption("2.Checkout A Book (Enter 2 to choose this option)");
         UserOption userOption3 = new UserOption("3.Return A Book (Enter 3 to choose this option)");
         UserOption userOption4 = new UserOption("4.List Movies (Enter 4 to choose this option)");
-        UserOption userOption5 = new UserOption("5.Quit (Enter 5 to choose this option)");
+        UserOption userOption5 = new UserOption("5.Checkout A Movie (Enter 5 to choose this option)");
+        UserOption userOption6 = new UserOption("6.Quit (Enter 6 to choose this option)");
 
         while (true) {
             MainMenu mainMenu = new MainMenu();
@@ -41,6 +42,7 @@ public class BibliotecaApplication {
             mainMenu.createOptionList(userOption3);
             mainMenu.createOptionList(userOption4);
             mainMenu.createOptionList(userOption5);
+            mainMenu.createOptionList(userOption6);
             mainMenu.displayOptionList();
             ReadUserInput readUserInput = new ReadUserInput();
             InputInterpreter inputInterpreter = new InputInterpreter(bookLibrary, movieLibrary);
