@@ -12,10 +12,20 @@ public class MovieLibrary {
     }
 
     public ArrayList<String> getACollectionOfAvailableMovies() {
-
         ArrayList<String> formattedCollectionOfMovies = new ArrayList<>();
         for (Movie aMovie : movies)
             formattedCollectionOfMovies.add(aMovie.getFormattedMovieDetails());
         return formattedCollectionOfMovies;
+    }
+
+    public boolean checkOutMovie(String movieToCheckOut) {
+        Movie movieBeingSearched = new Movie(movieToCheckOut, 0, null, null);
+        for (Movie movieBeingCompared : movies) {
+            if (movieBeingCompared.equals(movieBeingSearched)) {
+                movies.remove(movieBeingCompared);
+                return true;
+            }
+        }
+        return false;
     }
 }
