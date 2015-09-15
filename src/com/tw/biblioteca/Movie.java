@@ -1,3 +1,4 @@
+//to create instances of movies and their well-formatted details
 package com.tw.biblioteca;
 
 public class Movie {
