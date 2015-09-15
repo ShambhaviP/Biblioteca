@@ -34,4 +34,12 @@ public class TestMovie {
 
         assertEquals(true, movie.equals(movie));
     }
+
+    @Test
+    public void shouldReturnFalseIfAnObjectIsBeingComparedToNullObject() {
+        Movie movie1 = new Movie("Cleopatra", 1999, "Franc Roddam", "6.8");
+        Movie movie2 = new Movie(null, 0, null, null);
+
+        assertEquals(false, movie1.equals(movie2));
+    }
 }
