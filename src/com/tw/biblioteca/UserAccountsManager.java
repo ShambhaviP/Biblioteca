@@ -1,3 +1,4 @@
+//manages and authenticates user accounts
 package com.tw.biblioteca;
 
 import java.util.ArrayList;
