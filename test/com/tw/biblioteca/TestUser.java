@@ -7,38 +7,31 @@ import static org.junit.Assert.assertEquals;
 public class TestUser {
 
     @Test
-    public void shouldReturnLibraryNumber() {
-        User user = new User("123-2345", "user1password");
+    public void shouldReturnRoleOfUser() {
+        User user = new User("123-2345", "user1password", "CUSTOMER");
 
-        assertEquals("123-2345", user.getLibraryNumber());
-    }
-
-    @Test
-    public void shouldReturnPassword() {
-        User user = new User("123-2345", "user1password");
-
-        assertEquals("user1password", user.getPassword());
+        assertEquals("CUSTOMER", user.getRole());
     }
 
     @Test
     public void shouldReturnFalseIfOneOfTheTwoUserObjectsBeingComparedIsNull() {
-        User user1 = new User("111-1111", "abcd");
-        User user2 = new User(null, null);
+        User user1 = new User("111-1111", "abcd", "LIBRARIAN");
+        User user2 = new User(null, null, null);
 
         assertEquals(false, user1.equals(user2));
     }
 
     @Test
     public void shouldReturnFalseIfTheLibraryNumbersAreNotTheSame() {
-        User user1 = new User("111-1111", "abcd");
-        User user2 = new User("111-2222", "abcd");
+        User user1 = new User("111-1111", "abcd", "CUSTOMER");
+        User user2 = new User("111-2222", "abcd", "CUSTOMER");
 
         assertEquals(false, user1.equals(user2));
     }
 
     @Test
     public void shouldReturnFalseIfTwoObjectsBelongToDifferentClassesOrTypes() {
-        User user = new User("123-3456", "abcd");
+        User user = new User("123-3456", "abcd", "LIBRARIAN");
         Book book = new Book("Harry Potter", "J K Rowling", 1993);
 
         assertEquals(false, user.equals(book));
@@ -46,15 +39,15 @@ public class TestUser {
 
     @Test
     public void shouldReturnTrueIFAnObjectIsComparedToItself() {
-        User user = new User("123-3456", "abcd");
+        User user = new User("123-3456", "abcd", "CUSTOMER");
 
         assertEquals(true, user.equals(user));
     }
 
     @Test
     public void shouldReturnTrueIfAndOnlyIfTwoUsersHaveSameLibraryNumberAndPassWord() {
-        User user1 = new User("111-1111", "abcd");
-        User user2 = new User("111-1111", "abcd");
+        User user1 = new User("111-1111", "abcd", "CUSTOMER");
+        User user2 = new User("111-1111", "abcd", "CUSTOMER");
 
         assertEquals(true, user1.equals(user2));
     }
