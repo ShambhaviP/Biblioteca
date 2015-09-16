@@ -19,7 +19,6 @@ public class BookLibrary {
     }
 
     public ArrayList<String> getALibraryOfBooks() {
-
         ArrayList<String> formattedLibraryOfBooks = new ArrayList<>();
         for (Book aBook : availableBooks)
             formattedLibraryOfBooks.add(aBook.getFormattedBookDetails());
@@ -27,7 +26,6 @@ public class BookLibrary {
     }
 
     public boolean checkOutBooks(String bookNameForCheckOut) {
-
         Book bookToBeSearched = new Book(bookNameForCheckOut, null, 0);
         for (Book bookBeingMatched : availableBooks) {
             if (bookBeingMatched.equals(bookToBeSearched)) {
@@ -39,9 +37,7 @@ public class BookLibrary {
         return false;
     }
 
-
     public boolean returnBook(String nameOfTheBookToBeReturned) {
-
         Book bookToBeReturned = new Book(nameOfTheBookToBeReturned, null, 0);
         for (Book bookBeingMatched : checkedOutBooks) {
             if (bookBeingMatched.equals(bookToBeReturned)) {
