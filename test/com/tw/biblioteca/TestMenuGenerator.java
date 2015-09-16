@@ -10,25 +10,25 @@ import java.util.ArrayList;
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertNotEquals;
 
-public class TestMainMenu {
+public class TestMenuGenerator {
 
     @Test
     public void shouldNotReturnAnEmptyOptionList() {
         UserOption userOption = new UserOption("List Books");
-        MainMenu mainMenu = new MainMenu();
+        MenuGenerator menuGenerator = new MenuGenerator();
         ArrayList<String> optionList = new ArrayList<>();
 
-        assertNotEquals(optionList, mainMenu.createOptionList(userOption));
+        assertNotEquals(optionList, menuGenerator.createOptionList(userOption));
     }
 
     @Test
     public void shouldReturnAValidOptionList() {
         UserOption userOption = new UserOption("List Books");
-        MainMenu mainMenu = new MainMenu();
+        MenuGenerator menuGenerator = new MenuGenerator();
         ArrayList<String> optionList = new ArrayList<>();
         optionList.add("List Books");
 
-        assertEquals(optionList, mainMenu.createOptionList(userOption));
+        assertEquals(optionList, menuGenerator.createOptionList(userOption));
     }
 
     private final ByteArrayOutputStream outContent = new ByteArrayOutputStream();
@@ -41,9 +41,9 @@ public class TestMainMenu {
     @Test
     public void shouldDisplayListOfOptionsOnConsole() {
         UserOption userOption = new UserOption("List Books");
-        MainMenu mainMenu = new MainMenu();
-        mainMenu.createOptionList(userOption);
-        mainMenu.displayOptionList();
+        MenuGenerator menuGenerator = new MenuGenerator();
+        menuGenerator.createOptionList(userOption);
+        menuGenerator.displayOptionList();
 
         assertEquals("\n****MAIN MENU****\nList Books\n", outContent.toString());
     }

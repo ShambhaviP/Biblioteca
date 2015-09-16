@@ -36,14 +36,14 @@ public class BibliotecaApplication {
         UserOption userOption6 = new UserOption("6.Quit (Enter 6 to choose this option)");
 
         while (true) {
-            MainMenu mainMenu = new MainMenu();
-            mainMenu.createOptionList(userOption1);
-            mainMenu.createOptionList(userOption2);
-            mainMenu.createOptionList(userOption3);
-            mainMenu.createOptionList(userOption4);
-            mainMenu.createOptionList(userOption5);
-            mainMenu.createOptionList(userOption6);
-            mainMenu.displayOptionList();
+            MenuGenerator menuGenerator = new MenuGenerator();
+            menuGenerator.createOptionList(userOption1);
+            menuGenerator.createOptionList(userOption2);
+            menuGenerator.createOptionList(userOption3);
+            menuGenerator.createOptionList(userOption4);
+            menuGenerator.createOptionList(userOption5);
+            menuGenerator.createOptionList(userOption6);
+            menuGenerator.displayOptionList();
             ReadUserInput readUserInput = new ReadUserInput();
             InputInterpreter inputInterpreter = new InputInterpreter(bookLibrary, movieLibrary);
             inputInterpreter.interpret(readUserInput.read());

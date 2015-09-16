@@ -6,7 +6,7 @@ import java.util.ArrayList;
 
 import static org.junit.Assert.assertEquals;
 
-public class TestUserAccountsManager {
+public class TestUserAccountAuthenticator {
 
     @Test
     public void shouldHaveAListOfPredefinedUsers() {

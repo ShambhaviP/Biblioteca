@@ -3,11 +3,11 @@ package com.tw.biblioteca;
 
 import java.util.ArrayList;
 
-public class MainMenu {
+public class MenuGenerator {
 
     private ArrayList<String> optionList;
 
-    MainMenu() {
+    MenuGenerator() {
         optionList = new ArrayList<>();
     }
 
