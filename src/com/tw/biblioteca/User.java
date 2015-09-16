@@ -29,4 +29,9 @@ public class User {
         }
         return false;
     }
+
+    @Override
+    public int hashCode() {
+        return libraryNumber != null ? libraryNumber.hashCode() : 0;
+    }
 }

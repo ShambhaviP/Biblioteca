@@ -73,4 +73,11 @@ public class TestBook {
 
         assertNotEquals(book1.hashCode(), book2.hashCode());
     }
+
+    @Test
+    public void shouldReturnZeroAsHashCodeForABookWithANullBookName() {
+        Book book = new Book(null, "J.K. Rowling", 1999);
+
+        assertEquals(0, book.hashCode());
+    }
 }

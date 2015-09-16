@@ -67,4 +67,11 @@ public class TestMovie {
 
         assertNotEquals(movie1.hashCode(), movie2.hashCode());
     }
+
+    @Test
+    public void shouldReturnZeroForTheHashCodeOfAMovieWithANullValueForMovieName() {
+        Movie movie = new Movie(null, 1999, "Franc Roddam", "6.8");
+
+        assertEquals(0, movie.hashCode());
+    }
 }

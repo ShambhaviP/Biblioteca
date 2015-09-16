@@ -51,4 +51,19 @@ public class TestUser {
 
         assertEquals(true, user1.equals(user2));
     }
+
+    @Test
+    public void shouldProduceSameHashCodeForUsersWithSameLibraryNumber() {
+        User user1 = new User("111-1111", "abcd", "CUSTOMER");
+        User user2 = new User("111-1111", "abcd", "CUSTOMER");
+
+        assertEquals(user1.hashCode(), user2.hashCode());
+    }
+
+    @Test
+    public void shouldReturnZeroAsHashCodeForAUserWithNullLibraryNumber() {
+        User user = new User(null, "abcd", "CUSTOMER");
+
+        assertEquals(0, user.hashCode());
+    }
 }
