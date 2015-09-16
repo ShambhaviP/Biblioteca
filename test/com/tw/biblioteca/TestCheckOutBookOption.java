@@ -37,7 +37,9 @@ public class TestCheckOutBookOption {
         availableBooks.add(book1);
         availableBooks.add(book2);
         ArrayList<Book> checkedOutBooks = new ArrayList<>();
-        BookLibrary bookLibrary = new BookLibrary(availableBooks, checkedOutBooks);
+        User user = new User("111-1111", "password1", "CUSTOMER");
+        Session session = new Session(user);
+        BookLibrary bookLibrary = new BookLibrary(availableBooks, checkedOutBooks, session);
         CheckOutBookOption checkOutBookOption = new CheckOutBookOption(bookLibrary);
         ByteArrayInputStream inputStream = new ByteArrayInputStream("Harry Potter".getBytes());
         System.setIn(inputStream);
@@ -54,7 +56,9 @@ public class TestCheckOutBookOption {
         availableBooks.add(book1);
         availableBooks.add(book2);
         ArrayList<Book> checkedOutBooks = new ArrayList<>();
-        BookLibrary bookLibrary = new BookLibrary(availableBooks, checkedOutBooks);
+        User user = new User("111-1111", "password1", "CUSTOMER");
+        Session session = new Session(user);
+        BookLibrary bookLibrary = new BookLibrary(availableBooks, checkedOutBooks, session);
         CheckOutBookOption checkOutBookOption = new CheckOutBookOption(bookLibrary);
         ByteArrayInputStream inputStream = new ByteArrayInputStream("Anna Karenina".getBytes());
         System.setIn(inputStream);

@@ -39,7 +39,9 @@ public class TestReturnBookOption {
         availableBooks.add(book1);
         availableBooks.add(book2);
         ArrayList<Book> checkedOutBooks = new ArrayList<>();
-        BookLibrary bookLibrary = new BookLibrary(availableBooks, checkedOutBooks);
+        User user = new User("111-1111", "password1", "CUSTOMER");
+        Session session = new Session(user);
+        BookLibrary bookLibrary = new BookLibrary(availableBooks, checkedOutBooks, session);
         bookLibrary.checkOutBooks("Harry Potter");
         ReturnBookOption returnBookOption = new ReturnBookOption(bookLibrary);
         ByteArrayInputStream inputStream = new ByteArrayInputStream("Harry Potter".getBytes());
@@ -57,7 +59,9 @@ public class TestReturnBookOption {
         availableBooks.add(book1);
         availableBooks.add(book2);
         ArrayList<Book> checkedOutBooks = new ArrayList<>();
-        BookLibrary bookLibrary = new BookLibrary(availableBooks, checkedOutBooks);
+        User user = new User("111-1111", "password1", "CUSTOMER");
+        Session session = new Session(user);
+        BookLibrary bookLibrary = new BookLibrary(availableBooks, checkedOutBooks, session);
         bookLibrary.checkOutBooks("Harry Potter");
         ReturnBookOption returnBookOption = new ReturnBookOption(bookLibrary);
         ByteArrayInputStream inputStream = new ByteArrayInputStream("War And Peace".getBytes());

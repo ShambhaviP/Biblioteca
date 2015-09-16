@@ -2,15 +2,20 @@
 package com.tw.biblioteca;
 
 import java.util.ArrayList;
+import java.util.HashMap;
 
 public class BookLibrary {
 
     private ArrayList<Book> availableBooks = new ArrayList<>();
     private ArrayList<Book> checkedOutBooks = new ArrayList<>();
+    private HashMap<Book, User> bookUserMap;
+    private Session session;
 
-    public BookLibrary(ArrayList<Book> availableBooks, ArrayList<Book> checkedOutBooks) {
+    public BookLibrary(ArrayList<Book> availableBooks, ArrayList<Book> checkedOutBooks, Session session) {
         this.availableBooks = availableBooks;
         this.checkedOutBooks = checkedOutBooks;
+        bookUserMap = new HashMap<>();
+        this.session = session;
     }
 
     public String getColumnHeaders() {
@@ -30,6 +35,7 @@ public class BookLibrary {
         for (Book bookBeingMatched : availableBooks) {
             if (bookBeingMatched.equals(bookToBeSearched)) {
                 checkedOutBooks.add(bookBeingMatched);
+                bookUserMap.put(bookBeingMatched, session.getCurrentUser());
                 availableBooks.remove(bookToBeSearched);
                 return true;
             }

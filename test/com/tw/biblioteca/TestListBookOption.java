@@ -25,7 +25,9 @@ public class TestListBookOption {
         ArrayList<Book> availableBooks = new ArrayList<>();
         availableBooks.add(book);
         ArrayList<Book> checkedOutBooks = new ArrayList<>();
-        BookLibrary bookLibrary = new BookLibrary(availableBooks, checkedOutBooks);
+        User user = new User("111-1111", "password1", "CUSTOMER");
+        Session session = new Session(user);
+        BookLibrary bookLibrary = new BookLibrary(availableBooks, checkedOutBooks, session);
         ListBookOption listBookOption = new ListBookOption(bookLibrary);
         listBookOption.performOperation();
         String lineDivider = "\n-------------------------------------------------------\n";

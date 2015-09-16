@@ -15,7 +15,9 @@ public class TestBookLibrary {
         availableBooks.add(book1);
         availableBooks.add(book2);
         ArrayList<Book> checkedOutBooks = new ArrayList<>();
-        BookLibrary bookLibrary = new BookLibrary(availableBooks, checkedOutBooks);
+        User user = new User("111-1111", "password1", "CUSTOMER");
+        Session session = new Session(user);
+        BookLibrary bookLibrary = new BookLibrary(availableBooks, checkedOutBooks, session);
 
         assertEquals(("\n-------------------------------------------------------\n" + String.format("%-20s%-20s%-20s", "Title", "Author", "Year Of Publish") + "\n-------------------------------------------------------\n"), bookLibrary.getColumnHeaders());
     }
@@ -28,7 +30,9 @@ public class TestBookLibrary {
         availableBooks.add(book1);
         availableBooks.add(book2);
         ArrayList<Book> checkedOutBooks = new ArrayList<>();
-        BookLibrary bookLibrary = new BookLibrary(availableBooks, checkedOutBooks);
+        User user = new User("111-1111", "password1", "CUSTOMER");
+        Session session = new Session(user);
+        BookLibrary bookLibrary = new BookLibrary(availableBooks, checkedOutBooks, session);
         ArrayList<String> booksWithFormattedDetails = new ArrayList<>();
         booksWithFormattedDetails.add(book1.getFormattedBookDetails());
         booksWithFormattedDetails.add(book2.getFormattedBookDetails());
@@ -44,7 +48,9 @@ public class TestBookLibrary {
         availableBooks.add(book1);
         availableBooks.add(book2);
         ArrayList<Book> checkedOutBooks = new ArrayList<>();
-        BookLibrary bookLibrary = new BookLibrary(availableBooks, checkedOutBooks);
+        User user = new User("111-1111", "password1", "CUSTOMER");
+        Session session = new Session(user);
+        BookLibrary bookLibrary = new BookLibrary(availableBooks, checkedOutBooks, session);
         ArrayList<Book> bookListForComparison = new ArrayList<>();
         bookListForComparison.add(book1);
         bookLibrary.checkOutBooks("Harry Potter");
@@ -60,7 +66,9 @@ public class TestBookLibrary {
         availableBooks.add(book1);
         availableBooks.add(book2);
         ArrayList<Book> checkedOutBooks = new ArrayList<>();
-        BookLibrary bookLibrary = new BookLibrary(availableBooks, checkedOutBooks);
+        User user = new User("111-1111", "password1", "CUSTOMER");
+        Session session = new Session(user);
+        BookLibrary bookLibrary = new BookLibrary(availableBooks, checkedOutBooks, session);
         ArrayList<Book> bookListForComparison = new ArrayList<>();
         bookListForComparison.add(book2);
         bookLibrary.checkOutBooks("Harry Potter");
@@ -77,7 +85,9 @@ public class TestBookLibrary {
         availableBooks.add(book1);
         availableBooks.add(book2);
         ArrayList<Book> checkedOutBooks = new ArrayList<>();
-        BookLibrary bookLibrary = new BookLibrary(availableBooks, checkedOutBooks);
+        User user = new User("111-1111", "password1", "CUSTOMER");
+        Session session = new Session(user);
+        BookLibrary bookLibrary = new BookLibrary(availableBooks, checkedOutBooks, session);
 
         assertEquals(true, bookLibrary.checkOutBooks("Harry Potter"));
     }
@@ -90,7 +100,9 @@ public class TestBookLibrary {
         availableBooks.add(book1);
         availableBooks.add(book2);
         ArrayList<Book> checkedOutBooks = new ArrayList<>();
-        BookLibrary bookLibrary = new BookLibrary(availableBooks, checkedOutBooks);
+        User user = new User("111-1111", "password1", "CUSTOMER");
+        Session session = new Session(user);
+        BookLibrary bookLibrary = new BookLibrary(availableBooks, checkedOutBooks, session);
 
         assertEquals(false, bookLibrary.checkOutBooks("Nefertiti"));
     }
@@ -103,7 +115,9 @@ public class TestBookLibrary {
         availableBooks.add(book1);
         availableBooks.add(book2);
         ArrayList<Book> checkedOutBooks = new ArrayList<>();
-        BookLibrary bookLibrary = new BookLibrary(availableBooks, checkedOutBooks);
+        User user = new User("111-1111", "password1", "CUSTOMER");
+        Session session = new Session(user);
+        BookLibrary bookLibrary = new BookLibrary(availableBooks, checkedOutBooks, session);
         bookLibrary.checkOutBooks("Harry Potter");
         bookLibrary.returnBook("Harry Potter");
         ArrayList<Book> bookListForComparison = new ArrayList<>();
@@ -121,7 +135,9 @@ public class TestBookLibrary {
         availableBooks.add(book1);
         availableBooks.add(book2);
         ArrayList<Book> checkedOutBooks = new ArrayList<>();
-        BookLibrary bookLibrary = new BookLibrary(availableBooks, checkedOutBooks);
+        User user = new User("111-1111", "password1", "CUSTOMER");
+        Session session = new Session(user);
+        BookLibrary bookLibrary = new BookLibrary(availableBooks, checkedOutBooks, session);
         bookLibrary.checkOutBooks("Harry Potter");
 
         assertEquals(true, bookLibrary.returnBook("Harry Potter"));
@@ -135,7 +151,9 @@ public class TestBookLibrary {
         availableBooks.add(book1);
         availableBooks.add(book2);
         ArrayList<Book> checkedOutBooks = new ArrayList<>();
-        BookLibrary bookLibrary = new BookLibrary(availableBooks, checkedOutBooks);
+        User user = new User("111-1111", "password1", "CUSTOMER");
+        Session session = new Session(user);
+        BookLibrary bookLibrary = new BookLibrary(availableBooks, checkedOutBooks, session);
         bookLibrary.checkOutBooks("Harry Potter");
 
         assertEquals(false, bookLibrary.returnBook("Treasure Island"));

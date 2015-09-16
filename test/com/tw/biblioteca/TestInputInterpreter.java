@@ -26,7 +26,9 @@ public class TestInputInterpreter {
         Book book = new Book("Dracula", "Bram Stoker", 1920);
         availableBooks.add(book);
         ArrayList<Book> checkedOutBooks = new ArrayList<>();
-        BookLibrary bookLibrary = new BookLibrary(availableBooks, checkedOutBooks);
+        User user = new User("111-1111", "password1", "CUSTOMER");
+        Session session = new Session(user);
+        BookLibrary bookLibrary = new BookLibrary(availableBooks, checkedOutBooks, session);
         Movie movie1 = new Movie("Titanic", 1997, "James Cameron", "8.5");
         ArrayList<Movie> movies = new ArrayList<>();
         movies.add(movie1);
@@ -44,7 +46,9 @@ public class TestInputInterpreter {
         ArrayList<Book> availableBooks = new ArrayList<>();
         availableBooks.add(book);
         ArrayList<Book> checkedOutBooks = new ArrayList<>();
-        BookLibrary bookLibrary = new BookLibrary(availableBooks, checkedOutBooks);
+        User user = new User("111-1111", "password1", "CUSTOMER");
+        Session session = new Session(user);
+        BookLibrary bookLibrary = new BookLibrary(availableBooks, checkedOutBooks, session);
         Movie movie1 = new Movie("Titanic", 1997, "James Cameron", "8.5");
         ArrayList<Movie> movies = new ArrayList<>();
         movies.add(movie1);
@@ -61,7 +65,9 @@ public class TestInputInterpreter {
         ArrayList<Book> availableBooks = new ArrayList<>();
         availableBooks.add(book);
         ArrayList<Book> checkedOutBooks = new ArrayList<>();
-        BookLibrary bookLibrary = new BookLibrary(availableBooks, checkedOutBooks);
+        User user = new User("111-1111", "password1", "CUSTOMER");
+        Session session = new Session(user);
+        BookLibrary bookLibrary = new BookLibrary(availableBooks, checkedOutBooks, session);
         Movie movie1 = new Movie("Titanic", 1997, "James Cameron", "8.5");
         ArrayList<Movie> movies = new ArrayList<>();
         movies.add(movie1);
@@ -81,7 +87,9 @@ public class TestInputInterpreter {
         ArrayList<Book> availableBooks = new ArrayList<>();
         availableBooks.add(book);
         ArrayList<Book> checkedOutBooks = new ArrayList<>();
-        BookLibrary bookLibrary = new BookLibrary(availableBooks, checkedOutBooks);
+        User user = new User("111-1111", "password1", "CUSTOMER");
+        Session session = new Session(user);
+        BookLibrary bookLibrary = new BookLibrary(availableBooks, checkedOutBooks, session);
         Movie movie1 = new Movie("Titanic", 1997, "James Cameron", "8.5");
         ArrayList<Movie> movies = new ArrayList<>();
         movies.add(movie1);

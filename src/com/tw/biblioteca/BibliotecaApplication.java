@@ -17,7 +17,9 @@ public class BibliotecaApplication {
         availableBooks.add(book2);
         availableBooks.add(book3);
         ArrayList<Book> checkedOutBooks = new ArrayList<>();
-        BookLibrary bookLibrary = new BookLibrary(availableBooks, checkedOutBooks);
+        User user = new User("111-1111", "password1", "CUSTOMER");
+        Session session = new Session(user);
+        BookLibrary bookLibrary = new BookLibrary(availableBooks, checkedOutBooks, session);
 
         Movie movie1 = new Movie("Titanic", 1997, "James Cameron", "8.0");
         Movie movie2 = new Movie("Cleopatra", 1999, "Franc Roddam", "unrated");
