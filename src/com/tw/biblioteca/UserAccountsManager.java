@@ -18,4 +18,14 @@ public class UserAccountsManager {
     public ArrayList<User> getUserAccounts() {
         return userAccounts;
     }
+
+    public boolean authenticateUser(String libraryNumber, String password) {
+        User userToMatch = new User(libraryNumber, password);
+        for( User user : userAccounts) {
+            if (user.equals(userToMatch)) {
+                return true;
+            }
+        }
+        return false;
+    }
 }

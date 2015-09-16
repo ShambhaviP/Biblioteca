@@ -21,4 +21,11 @@ public class TestUserAccountsManager {
 
         assertEquals(users, userAccountsManager.getUserAccounts());
     }
+
+    @Test
+    public void shouldReturnTrueForAuthorisedUser() {
+        UserAccountsManager userAccountsManager = new UserAccountsManager();
+
+        assertEquals(true, userAccountsManager.authenticateUser("111-1111", "user1password"));
+    }
 }
