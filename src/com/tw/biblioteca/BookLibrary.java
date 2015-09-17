@@ -54,4 +54,8 @@ public class BookLibrary {
         }
         return false;
     }
+
+    public HashMap<Book, User> getBookUserMap() {
+        return bookUserMap;
+    }
 }

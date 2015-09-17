@@ -1,7 +1,9 @@
 package com.tw.biblioteca;
 
 import org.junit.Test;
+
 import java.util.ArrayList;
+import java.util.HashMap;
 
 import static org.junit.Assert.assertEquals;
 
@@ -157,5 +159,24 @@ public class TestBookLibrary {
         bookLibrary.checkOutBooks("Harry Potter");
 
         assertEquals(false, bookLibrary.returnBook("Treasure Island"));
+    }
+
+    @Test
+    public void shouldReturnTheMapFromCheckedOutBookToUser() {
+        Book book1 = new Book("Harry Potter", "J K Rowling", 1999);
+        Book book2 = new Book("The KiteRunner", "Khaled Hosseini", 2005);
+        ArrayList<Book> availableBooks = new ArrayList<>();
+        availableBooks.add(book1);
+        availableBooks.add(book2);
+        ArrayList<Book> checkedOutBooks = new ArrayList<>();
+        User user = new User("111-1111", "password1", "CUSTOMER");
+        Session session = new Session(user);
+        BookLibrary bookLibrary = new BookLibrary(availableBooks, checkedOutBooks, session);
+        bookLibrary.checkOutBooks("Harry Potter");
+
+        HashMap<Book, User> bookUserHashMap = new HashMap<>();
+        bookUserHashMap.put(book1, user);
+
+        assertEquals(bookUserHashMap, bookLibrary.getBookUserMap());
     }
 }
