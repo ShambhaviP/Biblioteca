@@ -23,9 +23,18 @@ public class TestUserAccountAuthenticator {
     }
 
     @Test
-    public void shouldReturnTrueForAuthorisedUser() {
+    public void shouldReturnTheUserForAuthorisedUser() {
         UserAccountAuthenticator userAccountAuthenticator = new UserAccountAuthenticator();
+        User user1 = new User("111-1111", "user1password", "CUSTOMER");
 
-        assertEquals(true, userAccountAuthenticator.authenticateUser("111-1111", "user1password"));
+        assertEquals(user1, userAccountAuthenticator.authenticateUser("111-1111", "user1password"));
+    }
+
+    @Test
+    public void shouldReturnTheUserWithRoleAsGuestForUnauthorisedUser() {
+        UserAccountAuthenticator userAccountAuthenticator = new UserAccountAuthenticator();
+        User user = new User("000-1111", "invalidPassword", "GUEST");
+
+        assertEquals(user, userAccountAuthenticator.authenticateUser("000-1111", "invalidPassword"));
     }
 }

@@ -20,13 +20,13 @@ public class UserAccountAuthenticator {
         return userAccounts;
     }
 
-    public boolean authenticateUser(String libraryNumber, String password) {
-        User userToMatch = new User(libraryNumber, password, null);
+    public User authenticateUser(String libraryNumber, String password) {
+        User guestUser = new User(libraryNumber, password, "GUEST");
         for( User user : userAccounts) {
-            if (user.equals(userToMatch)) {
-                return true;
+            if (user.equals(guestUser)) {
+                return user;
             }
         }
-        return false;
+        return guestUser;
     }
 }

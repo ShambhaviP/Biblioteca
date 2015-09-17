@@ -3,7 +3,6 @@ package com.tw.biblioteca;
 import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
-
 import java.io.ByteArrayOutputStream;
 import java.io.PrintStream;
 import java.util.ArrayList;
@@ -36,7 +35,7 @@ public class TestViewCheckedOutBookDetails {
         bookUserHashMap.put(book1, user);
 
         ViewCheckedOutBookDetails viewCheckedOutBookDetails = new ViewCheckedOutBookDetails(bookLibrary);
-        viewCheckedOutBookDetails.DisplayDetailsOfCheckedOutBooks();
+        viewCheckedOutBookDetails.performOperation();
 
         assertEquals(String.format("%-20s%-20s%-20s%-20s", "CHECKED-OUT BOOK", "AUTHOR", "YEAR OF PUBLISH", "USER") + "\n" + String.format("%-20s%-20s%-20s%-20s", "Harry Potter", "J K Rowling", 1999, "111-1111            "+"\n"), outContent.toString());
     }
