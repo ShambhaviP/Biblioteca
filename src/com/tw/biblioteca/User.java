@@ -17,6 +17,10 @@ public class User {
         return role;
     }
 
+    public String getLibraryNumber() {
+        return libraryNumber;
+    }
+
     @Override
     public boolean equals(Object that) {
         if (that != null && that.getClass() == this.getClass()) {

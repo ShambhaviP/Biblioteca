@@ -66,4 +66,11 @@ public class TestUser {
 
         assertEquals(0, user.hashCode());
     }
+
+    @Test
+    public void shouldReturnLibraryNumberOfUser() {
+        User user = new User("123-2345", "user1password", "CUSTOMER");
+
+        assertEquals("123-2345", user.getLibraryNumber());
+    }
 }
