@@ -5,7 +5,6 @@ import org.junit.Before;
 import org.junit.Rule;
 import org.junit.Test;
 import org.junit.contrib.java.lang.system.ExpectedSystemExit;
-
 import java.io.ByteArrayOutputStream;
 import java.io.PrintStream;
 import java.util.ArrayList;
@@ -22,7 +21,7 @@ public class TestRegisteredCustomerInputInterpreter {
     }
 
     @Test
-    public void shouldDisplayListOfBooksWhenUserEntersOneAsTheChoice() {
+    public void shouldDisplayListOfBooksWhenRegisteredCustomerEntersOneAsTheChoice() {
         ArrayList<Book> availableBooks = new ArrayList<>();
         Book book = new Book("Dracula", "Bram Stoker", 1920);
         availableBooks.add(book);
@@ -42,7 +41,7 @@ public class TestRegisteredCustomerInputInterpreter {
     }
 
     @Test
-    public void shouldNotifyTheUserWithAMessageWhenAnInvalidOptionIsEntered() {
+    public void shouldNotifyTheRegisteredCustomerWithAMessageWhenAnInvalidOptionIsEntered() {
         Book book = new Book("Dracula", "Bram Stoker", 1920);
         ArrayList<Book> availableBooks = new ArrayList<>();
         availableBooks.add(book);
@@ -60,7 +59,7 @@ public class TestRegisteredCustomerInputInterpreter {
     }
 
     @Test
-    public void shouldDisplayACollectionOfMoviesWhenUserChoosesOptionFour() {
+    public void shouldDisplayACollectionOfMoviesWhenRegisteredCustomerChoosesOptionFour() {
         Book book = new Book("Dracula", "Bram Stoker", 1920);
         ArrayList<Book> availableBooks = new ArrayList<>();
         availableBooks.add(book);
@@ -82,7 +81,7 @@ public class TestRegisteredCustomerInputInterpreter {
     public final ExpectedSystemExit exit = ExpectedSystemExit.none();
 
     @Test
-    public void shouldPerformASystemExitWhenUserChoosesOptionNumberSixToQuitApplication() {
+    public void shouldPerformASystemExitWhenRegisteredCustomerChoosesOptionNumberSixToQuitApplication() {
         Book book = new Book("Dracula", "Bram Stoker", 1920);
         ArrayList<Book> availableBooks = new ArrayList<>();
         availableBooks.add(book);

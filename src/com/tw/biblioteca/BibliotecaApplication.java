@@ -29,11 +29,13 @@ public class BibliotecaApplication {
         availableMovies.add(movie3);
         MovieLibrary movieLibrary = new MovieLibrary(availableMovies);
         UserOption userOption1 = new UserOption("1.Login As A Registered User");
+        UserOption userOption2 = new UserOption("2.Continue As A Guest");
         UserOption userOption3 = new UserOption("3.Quit");
 
         while (true) {
             MenuGenerator menuGenerator = new MenuGenerator();
             menuGenerator.createOptionList(userOption1);
+            menuGenerator.createOptionList(userOption2);
             menuGenerator.createOptionList(userOption3);
             menuGenerator.displayOptionList();
             ReadUserInput readUserInput = new ReadUserInput();

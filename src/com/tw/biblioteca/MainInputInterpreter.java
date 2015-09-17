@@ -4,9 +4,11 @@ package com.tw.biblioteca;
 public class MainInputInterpreter implements InputInterpreter {
 
     private LoginOption loginOption;
+    private GuestLoginOption guestLoginOption;
 
     MainInputInterpreter(BookLibrary bookLibrary, MovieLibrary movieLibrary) {
         loginOption = new LoginOption(bookLibrary, movieLibrary);
+        guestLoginOption = new GuestLoginOption(bookLibrary, movieLibrary);
     }
 
     @Override
@@ -14,6 +16,9 @@ public class MainInputInterpreter implements InputInterpreter {
         switch (choice) {
             case "1" :
                 loginOption.performOperation();
+                break;
+            case "2":
+                guestLoginOption.performOperation();
                 break;
             case "3" :
                 System.exit(0);
