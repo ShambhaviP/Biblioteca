@@ -162,7 +162,7 @@ public class TestBookLibrary {
     }
 
     @Test
-    public void shouldReturnTheMapFromCheckedOutBookToUser() {
+    public void shouldHaveAMapFromCheckedOutBookToUserOnceABookIsCheckedOutByTheUser() {
         Book book1 = new Book("Harry Potter", "J K Rowling", 1999);
         Book book2 = new Book("The KiteRunner", "Khaled Hosseini", 2005);
         ArrayList<Book> availableBooks = new ArrayList<>();
@@ -176,6 +176,25 @@ public class TestBookLibrary {
 
         HashMap<Book, User> bookUserHashMap = new HashMap<>();
         bookUserHashMap.put(book1, user);
+
+        assertEquals(bookUserHashMap, bookLibrary.getBookUserMap());
+    }
+
+    @Test
+    public void shouldNotHaveTheBookInBookToUserMapWhichHasBeenReturned() {
+        Book book1 = new Book("Harry Potter", "J K Rowling", 1999);
+        Book book2 = new Book("The KiteRunner", "Khaled Hosseini", 2005);
+        ArrayList<Book> availableBooks = new ArrayList<>();
+        availableBooks.add(book1);
+        availableBooks.add(book2);
+        ArrayList<Book> checkedOutBooks = new ArrayList<>();
+        User user = new User("111-1111", "password1", "CUSTOMER");
+        Session session = new Session(user);
+        BookLibrary bookLibrary = new BookLibrary(availableBooks, checkedOutBooks, session);
+        bookLibrary.checkOutBooks("Harry Potter");
+        bookLibrary.returnBook("Harry Potter");
+
+        HashMap<Book, User> bookUserHashMap = new HashMap<>();
 
         assertEquals(bookUserHashMap, bookLibrary.getBookUserMap());
     }

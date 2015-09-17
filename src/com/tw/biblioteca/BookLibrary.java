@@ -46,8 +46,9 @@ public class BookLibrary {
     public boolean returnBook(String nameOfTheBookToBeReturned) {
         Book bookToBeReturned = new Book(nameOfTheBookToBeReturned, null, 0);
         for (Book bookBeingMatched : checkedOutBooks) {
-            if (bookBeingMatched.equals(bookToBeReturned)) {
+            if (bookBeingMatched.equals(bookToBeReturned) && session.getCurrentUser().equals(bookUserMap.get(bookBeingMatched))) {
                 availableBooks.add(bookBeingMatched);
+                bookUserMap.remove(bookBeingMatched);
                 checkedOutBooks.remove(bookBeingMatched);
                 return true;
             }
