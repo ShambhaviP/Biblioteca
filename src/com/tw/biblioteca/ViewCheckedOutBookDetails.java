@@ -3,7 +3,7 @@ package com.tw.biblioteca;
 
 import java.util.HashMap;
 
-public class ViewCheckedOutBookDetails implements Operations{
+public class ViewCheckedOutBookDetails implements Operations {
 
     private BookLibrary bookLibrary;
 
@@ -14,10 +14,10 @@ public class ViewCheckedOutBookDetails implements Operations{
     @Override
     public void performOperation() {
         HashMap<Book, User> bookUserMap = bookLibrary.getBookUserMap();
-        System.out.println(String.format("%-20s%-20s%-20s%-20s", "CHECKED-OUT BOOK", "AUTHOR", "YEAR OF PUBLISH", "USER" ));
+        System.out.println(String.format("%-20s%-20s%-20s%-20s%-20s%-20s%-20s", "CHECKED-OUT BOOK", "AUTHOR", "YEAR OF PUBLISH", "USER LIBRARY NUMBER", "NAME", "EMAIL", "PHONE"));
         for (Book book : bookUserMap.keySet()) {
             User user = bookUserMap.get(book);
-            System.out.println(book.getFormattedBookDetails() + String.format("%-20s",user.getLibraryNumber()));
+            System.out.println(book.getFormattedBookDetails() + user.fetchUserInformation());
         }
     }
 }

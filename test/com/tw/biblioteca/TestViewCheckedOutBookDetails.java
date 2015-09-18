@@ -38,7 +38,7 @@ public class TestViewCheckedOutBookDetails {
         ViewCheckedOutBookDetails viewCheckedOutBookDetails = new ViewCheckedOutBookDetails(bookLibrary);
         viewCheckedOutBookDetails.performOperation();
 
-        assertEquals(String.format("%-20s%-20s%-20s%-20s", "CHECKED-OUT BOOK", "AUTHOR", "YEAR OF PUBLISH", "USER") + "\n" + String.format("%-20s%-20s%-20s%-20s", "Harry Potter", "J K Rowling", 1999, "111-1111            " + "\n"), outContent.toString());
+        assertEquals(String.format("%-20s%-20s%-20s%-20s%-20s%-20s%-20s", "CHECKED-OUT BOOK", "AUTHOR", "YEAR OF PUBLISH", "USER LIBRARY NUMBER", "NAME", "EMAIL", "PHONE") + "\n" + String.format("%-20s%-20s%-20s%-20s%-20s%-20s%-20s", "Harry Potter", "J K Rowling", 1999, "111-1111", "Elena Gilbert", "elena_gilbert@tvd.com", "+1 2345678901       " + "\n"), outContent.toString());
     }
 
     @After

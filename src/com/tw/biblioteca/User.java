@@ -46,6 +46,6 @@ public class User {
     }
 
     public String fetchUserInformation() {
-        return String.format("%-25s%-25s%-25s%-25s", libraryNumber, name, email, phone);
+        return String.format("%-20s%-20s%-20s%-20s", libraryNumber, name, email, phone);
     }
 }

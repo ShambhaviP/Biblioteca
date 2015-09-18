@@ -78,6 +78,6 @@ public class TestUser {
     public void shouldReturnUserDetails() {
         User user = new User("123-2345", "user1password", "CUSTOMER", "Alice", "alice123@wonderland.com", "+91 8776543245");
 
-        assertEquals(String.format("%-25s%-25s%-25s%-25s", "123-2345", "Alice", "alice123@wonderland.com", "+91 8776543245"), user.fetchUserInformation());
+        assertEquals(String.format("%-20s%-20s%-20s%-20s", "123-2345", "Alice", "alice123@wonderland.com", "+91 8776543245"), user.fetchUserInformation());
     }
 }
