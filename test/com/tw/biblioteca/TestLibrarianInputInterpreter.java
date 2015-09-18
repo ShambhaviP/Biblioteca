@@ -85,7 +85,7 @@ public class TestLibrarianInputInterpreter {
         ArrayList<Book> availableBooks = new ArrayList<>();
         availableBooks.add(book);
         ArrayList<Book> checkedOutBooks = new ArrayList<>();
-        User user = new User("111-", "password1", "CUSTOMER", "Elena Gilbert", "elena_gilbert@tvd.com", "+1 2345678901");
+        User user = new User("111-1111", "password1", "CUSTOMER", "Elena Gilbert", "elena_gilbert@tvd.com", "+1 2345678901");
         Session session = new Session(user);
         BookLibrary bookLibrary = new BookLibrary(availableBooks, checkedOutBooks, session);
         Movie movie1 = new Movie("Titanic", 1997, "James Cameron", "8.5");
@@ -96,7 +96,7 @@ public class TestLibrarianInputInterpreter {
         LibrarianInputInterpreter librarianInputInterpreter = new LibrarianInputInterpreter(bookLibrary, movieLibrary, session);
         librarianInputInterpreter.interpret("6");
 
-        assertEquals(String.format("%-20s%-20s%-20s%-20s", "CHECKED-OUT BOOK", "AUTHOR", "YEAR OF PUBLISH", "USER") + "\n" + String.format("%-20s%-20s%-20s%-20s", "Dracula", "Bram Stoker", 1920, "111-1111            " + "\n"), outContent.toString());
+        assertEquals(String.format("%-20s%-20s%-20s%-20s%-20s%-20s%-20s", "CHECKED-OUT BOOK", "AUTHOR", "YEAR OF PUBLISH", "USER LIBRARY NUMBER", "NAME", "EMAIL", "PHONE") + "\n" + String.format("%-20s%-20s%-20s%-20s%-20s%-20s%-20s", "Dracula", "Bram Stoker", 1920, "111-1111", "Elena Gilbert", "elena_gilbert@tvd.com", "+1 2345678901       " + "\n"), outContent.toString());
     }
 
     @Rule
