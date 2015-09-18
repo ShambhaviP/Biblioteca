@@ -3,7 +3,6 @@ package com.tw.biblioteca;
 import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
-
 import java.io.ByteArrayOutputStream;
 import java.io.PrintStream;
 import java.util.ArrayList;
@@ -26,7 +25,6 @@ public class TestListMoviesOption {
         movies.add(movie1);
         MovieLibrary movieLibrary = new MovieLibrary(movies);
         ListMoviesOption listMoviesOption = new ListMoviesOption(movieLibrary);
-
         listMoviesOption.performOperation();
 
         assertEquals((String.format("%-20s%-20s%-20s%-20s", "MOVIE", "YEAR OF RELEASE", "DIRECTOR", "RATING") + "\n" + String.format("%-20s%-20s%-20s%-20s", "Titanic", 1997, "James Cameron", "8.5") + "\n"), outContent.toString());

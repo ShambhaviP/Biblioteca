@@ -15,7 +15,6 @@ public class TestMovieLibrary {
         movies.add(movie1);
         movies.add(movie2);
         MovieLibrary movieLibrary = new MovieLibrary(movies);
-
         ArrayList<String> moviesWithFormattedDetails = new ArrayList<>();
         moviesWithFormattedDetails.add(movie1.getFormattedMovieDetails());
         moviesWithFormattedDetails.add(movie2.getFormattedMovieDetails());
@@ -33,8 +32,8 @@ public class TestMovieLibrary {
         MovieLibrary movieLibrary = new MovieLibrary(movies);
         ArrayList<Movie> movieCollectionForComparison = new ArrayList<>();
         movieCollectionForComparison.add(movie1);
-
         movieLibrary.checkOutMovie("Roman Holiday");
+
         assertEquals(movies, movieCollectionForComparison);
     }
 

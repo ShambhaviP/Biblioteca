@@ -3,7 +3,6 @@ package com.tw.biblioteca;
 import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
-
 import java.io.ByteArrayInputStream;
 import java.io.ByteArrayOutputStream;
 import java.io.PrintStream;
@@ -17,7 +16,6 @@ public class TestReturnBookOption {
     public void shouldReturnTheNameOfTheBookToBeReturnedAsEnteredByTheUser() {
         ReadUserInput readUserInput = new ReadUserInput();
         ByteArrayInputStream inputStream = new ByteArrayInputStream("Harry Potter".getBytes());
-
         System.setIn(inputStream);
         String input = readUserInput.read();
         System.setIn(System.in);

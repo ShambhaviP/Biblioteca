@@ -1,7 +1,7 @@
 //performs the operation corresponding to the choice input by the librarian after a librarian is logged in
 package com.tw.biblioteca;
 
-public class LibrarianInputInterpreter implements InputInterpreter{
+public class LibrarianInputInterpreter implements InputInterpreter {
 
     private ListBookOption listBookOption;
     private CheckOutBookOption checkOutBookOption;

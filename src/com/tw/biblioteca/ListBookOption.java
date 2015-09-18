@@ -16,4 +16,3 @@ public class ListBookOption implements Operations {
             System.out.println(booklibrary);
     }
 }
-

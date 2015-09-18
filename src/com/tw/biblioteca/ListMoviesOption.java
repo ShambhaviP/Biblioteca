@@ -16,4 +16,3 @@ public class ListMoviesOption implements Operations {
             System.out.println(movies);
     }
 }
-
