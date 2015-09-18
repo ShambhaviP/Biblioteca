@@ -6,11 +6,17 @@ public class User {
     private String libraryNumber;
     private String password;
     private String role;
+    private String name;
+    private String email;
+    private String phone;
 
-    public User(String libraryNumber, String password, String role) {
+    public User(String libraryNumber, String password, String role, String name, String email, String phone) {
         this.libraryNumber = libraryNumber;
         this.password = password;
         this.role = role;
+        this.name = name;
+        this.email = email;
+        this.phone = phone;
     }
 
     public String getRole() {
@@ -37,5 +43,9 @@ public class User {
     @Override
     public int hashCode() {
         return libraryNumber != null ? libraryNumber.hashCode() : 0;
+    }
+
+    public String fetchUserInformation() {
+        return String.format("%-25s%-25s%-25s%-25s", libraryNumber, name, email, phone);
     }
 }

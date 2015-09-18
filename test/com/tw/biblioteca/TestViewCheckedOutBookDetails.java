@@ -3,6 +3,7 @@ package com.tw.biblioteca;
 import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
+
 import java.io.ByteArrayOutputStream;
 import java.io.PrintStream;
 import java.util.ArrayList;
@@ -27,7 +28,7 @@ public class TestViewCheckedOutBookDetails {
         availableBooks.add(book1);
         availableBooks.add(book2);
         ArrayList<Book> checkedOutBooks = new ArrayList<>();
-        User user = new User("111-1111", "password1", "CUSTOMER");
+        User user = new User("111-1111", "password1", "CUSTOMER", "Elena Gilbert", "elena_gilbert@tvd.com", "+1 2345678901");
         Session session = new Session(user);
         BookLibrary bookLibrary = new BookLibrary(availableBooks, checkedOutBooks, session);
         bookLibrary.checkOutBooks("Harry Potter");
@@ -37,7 +38,7 @@ public class TestViewCheckedOutBookDetails {
         ViewCheckedOutBookDetails viewCheckedOutBookDetails = new ViewCheckedOutBookDetails(bookLibrary);
         viewCheckedOutBookDetails.performOperation();
 
-        assertEquals(String.format("%-20s%-20s%-20s%-20s", "CHECKED-OUT BOOK", "AUTHOR", "YEAR OF PUBLISH", "USER") + "\n" + String.format("%-20s%-20s%-20s%-20s", "Harry Potter", "J K Rowling", 1999, "111-1111            "+"\n"), outContent.toString());
+        assertEquals(String.format("%-20s%-20s%-20s%-20s", "CHECKED-OUT BOOK", "AUTHOR", "YEAR OF PUBLISH", "USER") + "\n" + String.format("%-20s%-20s%-20s%-20s", "Harry Potter", "J K Rowling", 1999, "111-1111            " + "\n"), outContent.toString());
     }
 
     @After

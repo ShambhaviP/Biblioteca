@@ -8,7 +8,7 @@ public class TestSession {
 
     @Test
     public void shouldReturnCurrentUser() {
-        User user = new User("111-1111", "abcd", "CUSTOMER");
+        User user = new User("111-1111", "abcd", "CUSTOMER", "Elena Gilbert", "elena_gilbert@tvd.com", "+1 2345678901");
         Session session = new Session(user);
 
         assertEquals(user, session.getCurrentUser());
@@ -16,7 +16,7 @@ public class TestSession {
 
     @Test
     public void shouldSetTheLoggedInUserToCurrentUser() {
-        User user = new User("111-1111", "abcd", "CUSTOMER");
+        User user = new User("111-1111", "abcd", "CUSTOMER", "Elena Gilbert", "elena_gilbert@tvd.com", "+1 2345678901");
         Session session = new Session(user);
         session.setCurrentUser(user);
 

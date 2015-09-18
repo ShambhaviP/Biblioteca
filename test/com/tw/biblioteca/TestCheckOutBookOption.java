@@ -3,6 +3,7 @@ package com.tw.biblioteca;
 import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
+
 import java.io.ByteArrayInputStream;
 import java.io.ByteArrayOutputStream;
 import java.io.PrintStream;
@@ -37,7 +38,7 @@ public class TestCheckOutBookOption {
         availableBooks.add(book1);
         availableBooks.add(book2);
         ArrayList<Book> checkedOutBooks = new ArrayList<>();
-        User user = new User("111-1111", "password1", "CUSTOMER");
+        User user = new User("111-1111", "password1", "CUSTOMER", "Elena Gilbert", "elena_gilbert@tvd.com", "+1 2345678901");
         Session session = new Session(user);
         BookLibrary bookLibrary = new BookLibrary(availableBooks, checkedOutBooks, session);
         CheckOutBookOption checkOutBookOption = new CheckOutBookOption(bookLibrary);
@@ -56,7 +57,7 @@ public class TestCheckOutBookOption {
         availableBooks.add(book1);
         availableBooks.add(book2);
         ArrayList<Book> checkedOutBooks = new ArrayList<>();
-        User user = new User("111-1111", "password1", "CUSTOMER");
+        User user = new User("111-1111", "password1", "CUSTOMER", "Elena Gilbert", "elena_gilbert@tvd.com", "+1 2345678901");
         Session session = new Session(user);
         BookLibrary bookLibrary = new BookLibrary(availableBooks, checkedOutBooks, session);
         CheckOutBookOption checkOutBookOption = new CheckOutBookOption(bookLibrary);

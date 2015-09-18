@@ -11,6 +11,6 @@ public class LogoutOption implements Operations{
 
     @Override
     public void performOperation() {
-        session.setCurrentUser(new User("000-0000", "PASSWORD", "UNDEFINED"));
+        session.setCurrentUser(new User("000-0000", "PASSWORD", "UNDEFINED", "NA", "NA", "NA"));
     }
 }

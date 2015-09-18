@@ -17,7 +17,7 @@ public class TestBookLibrary {
         availableBooks.add(book1);
         availableBooks.add(book2);
         ArrayList<Book> checkedOutBooks = new ArrayList<>();
-        User user = new User("111-1111", "password1", "CUSTOMER");
+        User user = new User("111-1111", "password1", "CUSTOMER", "Elena Gilbert", "elena_gilbert@tvd.com", "+1 2345678901");
         Session session = new Session(user);
         BookLibrary bookLibrary = new BookLibrary(availableBooks, checkedOutBooks, session);
 
@@ -32,7 +32,7 @@ public class TestBookLibrary {
         availableBooks.add(book1);
         availableBooks.add(book2);
         ArrayList<Book> checkedOutBooks = new ArrayList<>();
-        User user = new User("111-1111", "password1", "CUSTOMER");
+        User user = new User("111-1111", "password1", "CUSTOMER", "Elena Gilbert", "elena_gilbert@tvd.com", "+1 2345678901");
         Session session = new Session(user);
         BookLibrary bookLibrary = new BookLibrary(availableBooks, checkedOutBooks, session);
         ArrayList<String> booksWithFormattedDetails = new ArrayList<>();
@@ -50,7 +50,7 @@ public class TestBookLibrary {
         availableBooks.add(book1);
         availableBooks.add(book2);
         ArrayList<Book> checkedOutBooks = new ArrayList<>();
-        User user = new User("111-1111", "password1", "CUSTOMER");
+        User user = new User("111-1111", "password1", "CUSTOMER", "Elena Gilbert", "elena_gilbert@tvd.com", "+1 2345678901");
         Session session = new Session(user);
         BookLibrary bookLibrary = new BookLibrary(availableBooks, checkedOutBooks, session);
         ArrayList<Book> bookListForComparison = new ArrayList<>();
@@ -68,7 +68,7 @@ public class TestBookLibrary {
         availableBooks.add(book1);
         availableBooks.add(book2);
         ArrayList<Book> checkedOutBooks = new ArrayList<>();
-        User user = new User("111-1111", "password1", "CUSTOMER");
+        User user = new User("111-1111", "password1", "CUSTOMER", "Elena Gilbert", "elena_gilbert@tvd.com", "+1 2345678901");
         Session session = new Session(user);
         BookLibrary bookLibrary = new BookLibrary(availableBooks, checkedOutBooks, session);
         ArrayList<Book> bookListForComparison = new ArrayList<>();
@@ -87,7 +87,7 @@ public class TestBookLibrary {
         availableBooks.add(book1);
         availableBooks.add(book2);
         ArrayList<Book> checkedOutBooks = new ArrayList<>();
-        User user = new User("111-1111", "password1", "CUSTOMER");
+        User user = new User("111-1111", "password1", "CUSTOMER", "Elena Gilbert", "elena_gilbert@tvd.com", "+1 2345678901");
         Session session = new Session(user);
         BookLibrary bookLibrary = new BookLibrary(availableBooks, checkedOutBooks, session);
 
@@ -102,7 +102,7 @@ public class TestBookLibrary {
         availableBooks.add(book1);
         availableBooks.add(book2);
         ArrayList<Book> checkedOutBooks = new ArrayList<>();
-        User user = new User("111-1111", "password1", "CUSTOMER");
+        User user = new User("111-1111", "password1", "CUSTOMER", "Elena Gilbert", "elena_gilbert@tvd.com", "+1 2345678901");
         Session session = new Session(user);
         BookLibrary bookLibrary = new BookLibrary(availableBooks, checkedOutBooks, session);
 
@@ -117,7 +117,7 @@ public class TestBookLibrary {
         availableBooks.add(book1);
         availableBooks.add(book2);
         ArrayList<Book> checkedOutBooks = new ArrayList<>();
-        User user = new User("111-1111", "password1", "CUSTOMER");
+        User user = new User("111-1111", "password1", "CUSTOMER", "Elena Gilbert", "elena_gilbert@tvd.com", "+1 2345678901");
         Session session = new Session(user);
         BookLibrary bookLibrary = new BookLibrary(availableBooks, checkedOutBooks, session);
         bookLibrary.checkOutBooks("Harry Potter");
@@ -137,7 +137,7 @@ public class TestBookLibrary {
         availableBooks.add(book1);
         availableBooks.add(book2);
         ArrayList<Book> checkedOutBooks = new ArrayList<>();
-        User user = new User("111-1111", "password1", "CUSTOMER");
+        User user = new User("111-1111", "password1", "CUSTOMER", "Elena Gilbert", "elena_gilbert@tvd.com", "+1 2345678901");
         Session session = new Session(user);
         BookLibrary bookLibrary = new BookLibrary(availableBooks, checkedOutBooks, session);
         bookLibrary.checkOutBooks("Harry Potter");
@@ -153,7 +153,7 @@ public class TestBookLibrary {
         availableBooks.add(book1);
         availableBooks.add(book2);
         ArrayList<Book> checkedOutBooks = new ArrayList<>();
-        User user = new User("111-1111", "password1", "CUSTOMER");
+        User user = new User("111-1111", "password1", "CUSTOMER", "Elena Gilbert", "elena_gilbert@tvd.com", "+1 2345678901");
         Session session = new Session(user);
         BookLibrary bookLibrary = new BookLibrary(availableBooks, checkedOutBooks, session);
         bookLibrary.checkOutBooks("Harry Potter");
@@ -169,11 +169,10 @@ public class TestBookLibrary {
         availableBooks.add(book1);
         availableBooks.add(book2);
         ArrayList<Book> checkedOutBooks = new ArrayList<>();
-        User user = new User("111-1111", "password1", "CUSTOMER");
+        User user = new User("111-1111", "password1", "CUSTOMER", "Elena Gilbert", "elena_gilbert@tvd.com", "+1 2345678901");
         Session session = new Session(user);
         BookLibrary bookLibrary = new BookLibrary(availableBooks, checkedOutBooks, session);
         bookLibrary.checkOutBooks("Harry Potter");
-
         HashMap<Book, User> bookUserHashMap = new HashMap<>();
         bookUserHashMap.put(book1, user);
 
@@ -188,12 +187,11 @@ public class TestBookLibrary {
         availableBooks.add(book1);
         availableBooks.add(book2);
         ArrayList<Book> checkedOutBooks = new ArrayList<>();
-        User user = new User("111-1111", "password1", "CUSTOMER");
+        User user = new User("111-1111", "password1", "CUSTOMER", "Elena Gilbert", "elena_gilbert@tvd.com", "+1 2345678901");
         Session session = new Session(user);
         BookLibrary bookLibrary = new BookLibrary(availableBooks, checkedOutBooks, session);
         bookLibrary.checkOutBooks("Harry Potter");
         bookLibrary.returnBook("Harry Potter");
-
         HashMap<Book, User> bookUserHashMap = new HashMap<>();
 
         assertEquals(bookUserHashMap, bookLibrary.getBookUserMap());
