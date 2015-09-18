@@ -99,11 +99,30 @@ public class TestLibrarianInputInterpreter {
         assertEquals(String.format("%-20s%-20s%-20s%-20s%-20s%-20s%-20s", "CHECKED-OUT BOOK", "AUTHOR", "YEAR OF PUBLISH", "USER LIBRARY NUMBER", "NAME", "EMAIL", "PHONE") + "\n" + String.format("%-20s%-20s%-20s%-20s%-20s%-20s%-20s", "Dracula", "Bram Stoker", 1920, "111-1111", "Elena Gilbert", "elena_gilbert@tvd.com", "+1 2345678901       " + "\n"), outContent.toString());
     }
 
+    @Test
+    public void shouldDisplayTheLibrarianPersonalDetailsWhenSheChoosesOptionNumberSeven() {
+        ArrayList<Book> availableBooks = new ArrayList<>();
+        Book book = new Book("Dracula", "Bram Stoker", 1920);
+        availableBooks.add(book);
+        ArrayList<Book> checkedOutBooks = new ArrayList<>();
+        User user = new User("222-2222", "user2password", "LIBRARIAN", "Damon Salvatore", "damon.s@tvd.com", "+1 3434345678");
+        Session session = new Session(user);
+        BookLibrary bookLibrary = new BookLibrary(availableBooks, checkedOutBooks, session);
+        Movie movie1 = new Movie("Titanic", 1997, "James Cameron", "8.5");
+        ArrayList<Movie> movies = new ArrayList<>();
+        movies.add(movie1);
+        MovieLibrary movieLibrary = new MovieLibrary(movies);
+        LibrarianInputInterpreter librarianInputInterpreter = new LibrarianInputInterpreter(bookLibrary, movieLibrary, session);
+        librarianInputInterpreter.interpret("7");
+
+        assertEquals(String.format("%-20s%-20s%-20s%-20s", "LIBRARY NUMBER", "NAME", "EMAIL", "PHONE")+"\n"+String.format("%-20s%-20s%-20s%-20s", "222-2222", "Damon Salvatore", "damon.s@tvd.com", "+1 3434345678") + "\n", outContent.toString());
+    }
+
     @Rule
     public final ExpectedSystemExit exit = ExpectedSystemExit.none();
 
     @Test
-    public void shouldPerformASystemExitWhenLibrarianChoosesOptionNumberEightToQuitApplication() {
+    public void shouldPerformASystemExitWhenLibrarianChoosesOptionNumberNineToQuitApplication() {
         Book book = new Book("Dracula", "Bram Stoker", 1920);
         ArrayList<Book> availableBooks = new ArrayList<>();
         availableBooks.add(book);
@@ -118,7 +137,7 @@ public class TestLibrarianInputInterpreter {
         LibrarianInputInterpreter librarianInputInterpreter = new LibrarianInputInterpreter(bookLibrary, movieLibrary, session);
 
         exit.expectSystemExit();
-        librarianInputInterpreter.interpret("8");
+        librarianInputInterpreter.interpret("9");
     }
 
     @After

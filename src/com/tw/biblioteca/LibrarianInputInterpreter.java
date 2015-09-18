@@ -9,6 +9,7 @@ public class LibrarianInputInterpreter implements InputInterpreter{
     private ListMoviesOption listMoviesOption;
     private CheckOutMovieOption checkOutMovieOption;
     private ViewCheckedOutBookDetails viewCheckedOutBookDetails;
+    private ViewUserDetails viewUserDetails;
     private LogoutOption logoutOption;
     private MainMenu mainMenu;
 
@@ -19,6 +20,7 @@ public class LibrarianInputInterpreter implements InputInterpreter{
         listMoviesOption = new ListMoviesOption(movieLibrary);
         checkOutMovieOption = new CheckOutMovieOption(movieLibrary);
         viewCheckedOutBookDetails = new ViewCheckedOutBookDetails(bookLibrary);
+        viewUserDetails = new ViewUserDetails(session);
         logoutOption = new LogoutOption(session);
         mainMenu = new MainMenu(bookLibrary, movieLibrary);
     }
@@ -48,10 +50,13 @@ public class LibrarianInputInterpreter implements InputInterpreter{
                 viewCheckedOutBookDetails.performOperation();
                 break;
             case "7":
+                viewUserDetails.performOperation();
+                break;
+            case "8":
                 logoutOption.performOperation();
                 mainMenu.displayMainMenu();
                 break;
-            case "8":
+            case "9":
                 System.exit(0);
                 break;
             default:
