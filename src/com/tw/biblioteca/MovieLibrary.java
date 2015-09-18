@@ -1,4 +1,4 @@
-//to get a formatted collection of movies
+//to get a formatted collection of movies and checkout movies
 package com.tw.biblioteca;
 
 import java.util.ArrayList;

@@ -1,3 +1,4 @@
+//to display the information of currently logged-in user
 package com.tw.biblioteca;
 
 public class ViewUserDetails implements Operations {

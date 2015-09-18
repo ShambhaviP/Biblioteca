@@ -6,11 +6,13 @@ public class GuestInputInterpreter implements InputInterpreter {
     private ListBookOption listBookOption;
     private ListMoviesOption listMoviesOption;
     private CheckOutMovieOption checkOutMovieOption;
+    private MainMenu mainMenu;
 
     public GuestInputInterpreter(BookLibrary bookLibrary, MovieLibrary movieLibrary) {
         listBookOption = new ListBookOption(bookLibrary);
         listMoviesOption = new ListMoviesOption(movieLibrary);
         checkOutMovieOption = new CheckOutMovieOption(movieLibrary);
+        mainMenu = new MainMenu(bookLibrary, movieLibrary);
     }
 
     @Override
@@ -27,6 +29,9 @@ public class GuestInputInterpreter implements InputInterpreter {
                 checkOutMovieOption.performOperation();
                 break;
             case "4":
+                mainMenu.displayMainMenu();
+                break;
+            case "5":
                 System.exit(0);
                 break;
             default:
