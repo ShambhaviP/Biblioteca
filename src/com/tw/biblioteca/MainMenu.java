@@ -8,13 +8,15 @@ public class MainMenu {
     private UserOption userOption3;
     private BookLibrary bookLibrary;
     private MovieLibrary movieLibrary;
+    private Session session;
 
-    public MainMenu(BookLibrary bookLibrary, MovieLibrary movieLibrary) {
+    public MainMenu(BookLibrary bookLibrary, MovieLibrary movieLibrary, Session session) {
         userOption1 = new UserOption("1.Login As A Registered User");
         userOption2 = new UserOption("2.Continue As A Guest");
         userOption3 = new UserOption("3.Quit");
         this.bookLibrary = bookLibrary;
         this.movieLibrary = movieLibrary;
+        this.session = session;
     }
 
     public void displayMainMenu() {
@@ -25,7 +27,7 @@ public class MainMenu {
             menuGenerator.createOptionList(userOption3);
             menuGenerator.displayOptionList();
             ReadUserInput readUserInput = new ReadUserInput();
-            MainInputInterpreter mainInputInterpreter = new MainInputInterpreter(bookLibrary, movieLibrary);
+            MainInputInterpreter mainInputInterpreter = new MainInputInterpreter(bookLibrary, movieLibrary, session);
             mainInputInterpreter.interpret(readUserInput.read());
         }
     }

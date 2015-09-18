@@ -7,12 +7,13 @@ public class GuestInputInterpreter implements InputInterpreter {
     private ListMoviesOption listMoviesOption;
     private CheckOutMovieOption checkOutMovieOption;
     private MainMenu mainMenu;
+    private Session session;
 
-    public GuestInputInterpreter(BookLibrary bookLibrary, MovieLibrary movieLibrary) {
+    public GuestInputInterpreter(BookLibrary bookLibrary, MovieLibrary movieLibrary, Session session) {
         listBookOption = new ListBookOption(bookLibrary);
         listMoviesOption = new ListMoviesOption(movieLibrary);
         checkOutMovieOption = new CheckOutMovieOption(movieLibrary);
-        mainMenu = new MainMenu(bookLibrary, movieLibrary);
+        mainMenu = new MainMenu(bookLibrary, movieLibrary, session);
     }
 
     @Override

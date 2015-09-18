@@ -6,9 +6,10 @@ public class GuestLoginOption implements Operations{
     private GuestUserMenu guestUserMenu;
     private BookLibrary bookLibrary;
     private MovieLibrary movieLibrary;
+    private Session session;
 
-    public GuestLoginOption(BookLibrary bookLibrary, MovieLibrary movieLibrary) {
-        guestUserMenu = new GuestUserMenu();
+    public GuestLoginOption(BookLibrary bookLibrary, MovieLibrary movieLibrary, Session session) {
+        guestUserMenu = new GuestUserMenu(session);
         this.bookLibrary = bookLibrary;
         this.movieLibrary = movieLibrary;
     }

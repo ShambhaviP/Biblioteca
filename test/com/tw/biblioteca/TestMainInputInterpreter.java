@@ -34,7 +34,7 @@ public class TestMainInputInterpreter {
         ArrayList<Movie> movies = new ArrayList<>();
         movies.add(movie1);
         MovieLibrary movieLibrary = new MovieLibrary(movies);
-        MainInputInterpreter mainInputInterpreter = new MainInputInterpreter(bookLibrary, movieLibrary);
+        MainInputInterpreter mainInputInterpreter = new MainInputInterpreter(bookLibrary, movieLibrary, session);
         mainInputInterpreter.interpret("gibberish");
 
         assertEquals("\nSelect a valid option!\n", outContent.toString());
@@ -56,7 +56,7 @@ public class TestMainInputInterpreter {
         ArrayList<Movie> movies = new ArrayList<>();
         movies.add(movie1);
         MovieLibrary movieLibrary = new MovieLibrary(movies);
-        MainInputInterpreter mainInputInterpreter = new MainInputInterpreter(bookLibrary, movieLibrary);
+        MainInputInterpreter mainInputInterpreter = new MainInputInterpreter(bookLibrary, movieLibrary, session);
 
         exit.expectSystemExit();
         mainInputInterpreter.interpret("3");

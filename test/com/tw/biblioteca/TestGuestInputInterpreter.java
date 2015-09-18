@@ -34,7 +34,7 @@ public class TestGuestInputInterpreter {
         ArrayList<Movie> movies = new ArrayList<>();
         movies.add(movie1);
         MovieLibrary movieLibrary = new MovieLibrary(movies);
-        GuestInputInterpreter guestInputInterpreter = new GuestInputInterpreter(bookLibrary, movieLibrary);
+        GuestInputInterpreter guestInputInterpreter = new GuestInputInterpreter(bookLibrary, movieLibrary, session);
         guestInputInterpreter.interpret("1");
         String lineDivider = "\n-------------------------------------------------------\n";
 
@@ -54,7 +54,7 @@ public class TestGuestInputInterpreter {
         ArrayList<Movie> movies = new ArrayList<>();
         movies.add(movie1);
         MovieLibrary movieLibrary = new MovieLibrary(movies);
-        GuestInputInterpreter guestInputInterpreter = new GuestInputInterpreter(bookLibrary, movieLibrary);
+        GuestInputInterpreter guestInputInterpreter = new GuestInputInterpreter(bookLibrary, movieLibrary, session);
         guestInputInterpreter.interpret("invalid input");
 
         assertEquals("\nSelect a valid option!\n", outContent.toString());
@@ -73,7 +73,7 @@ public class TestGuestInputInterpreter {
         ArrayList<Movie> movies = new ArrayList<>();
         movies.add(movie1);
         MovieLibrary movieLibrary = new MovieLibrary(movies);
-        GuestInputInterpreter guestInputInterpreter = new GuestInputInterpreter(bookLibrary, movieLibrary);
+        GuestInputInterpreter guestInputInterpreter = new GuestInputInterpreter(bookLibrary, movieLibrary, session);
         guestInputInterpreter.interpret("2");
 
         assertEquals((String.format("%-20s%-20s%-20s%-20s", "MOVIE", "YEAR OF RELEASE", "DIRECTOR", "RATING") + "\n" + String.format("%-20s%-20s%-20s%-20s", "Titanic", 1997, "James Cameron", "8.5") + "\n"), outContent.toString());
@@ -95,7 +95,7 @@ public class TestGuestInputInterpreter {
         ArrayList<Movie> movies = new ArrayList<>();
         movies.add(movie1);
         MovieLibrary movieLibrary = new MovieLibrary(movies);
-        GuestInputInterpreter guestInputInterpreter = new GuestInputInterpreter(bookLibrary, movieLibrary);
+        GuestInputInterpreter guestInputInterpreter = new GuestInputInterpreter(bookLibrary, movieLibrary, session);
 
         exit.expectSystemExit();
         guestInputInterpreter.interpret("4");

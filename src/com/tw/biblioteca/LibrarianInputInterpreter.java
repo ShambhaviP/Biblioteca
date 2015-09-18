@@ -22,7 +22,7 @@ public class LibrarianInputInterpreter implements InputInterpreter{
         viewCheckedOutBookDetails = new ViewCheckedOutBookDetails(bookLibrary);
         viewUserDetails = new ViewUserDetails(session);
         logoutOption = new LogoutOption(session);
-        mainMenu = new MainMenu(bookLibrary, movieLibrary);
+        mainMenu = new MainMenu(bookLibrary, movieLibrary, session);
     }
 
     @Override

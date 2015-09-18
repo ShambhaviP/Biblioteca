@@ -20,7 +20,7 @@ public class RegisteredCustomerInputInterpreter implements InputInterpreter {
         checkOutMovieOption = new CheckOutMovieOption(movieLibrary);
         viewUserDetails = new ViewUserDetails(session);
         logoutOption = new LogoutOption(session);
-        mainMenu = new MainMenu(bookLibrary, movieLibrary);
+        mainMenu = new MainMenu(bookLibrary, movieLibrary, session);
     }
 
     @Override

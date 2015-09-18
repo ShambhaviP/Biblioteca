@@ -28,7 +28,7 @@ public class BibliotecaApplication {
         availableMovies.add(movie2);
         availableMovies.add(movie3);
         MovieLibrary movieLibrary = new MovieLibrary(availableMovies);
-        MainMenu mainMenu = new MainMenu(bookLibrary, movieLibrary);
+        MainMenu mainMenu = new MainMenu(bookLibrary, movieLibrary, session);
         mainMenu.displayMainMenu();
     }
 }

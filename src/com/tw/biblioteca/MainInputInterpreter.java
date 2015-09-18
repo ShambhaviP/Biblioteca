@@ -5,22 +5,24 @@ public class MainInputInterpreter implements InputInterpreter {
 
     private LoginOption loginOption;
     private GuestLoginOption guestLoginOption;
+    private Session session;
 
-    MainInputInterpreter(BookLibrary bookLibrary, MovieLibrary movieLibrary) {
-        loginOption = new LoginOption(bookLibrary, movieLibrary);
-        guestLoginOption = new GuestLoginOption(bookLibrary, movieLibrary);
+    MainInputInterpreter(BookLibrary bookLibrary, MovieLibrary movieLibrary, Session session) {
+        this.session = session;
+        loginOption = new LoginOption(bookLibrary, movieLibrary, this.session);
+        guestLoginOption = new GuestLoginOption(bookLibrary, movieLibrary, session);
     }
 
     @Override
     public void interpret(String choice) {
         switch (choice) {
-            case "1" :
+            case "1":
                 loginOption.performOperation();
                 break;
             case "2":
                 guestLoginOption.performOperation();
                 break;
-            case "3" :
+            case "3":
                 System.exit(0);
                 break;
             default:

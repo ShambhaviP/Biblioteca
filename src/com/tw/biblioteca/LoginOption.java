@@ -8,13 +8,15 @@ public class LoginOption implements Operations {
     private RegisteredCustomerMenu registeredCustomerMenu;
     private BookLibrary bookLibrary;
     private MovieLibrary movieLibrary;
+    private Session session;
 
-    LoginOption(BookLibrary bookLibrary, MovieLibrary movieLibrary) {
+    LoginOption(BookLibrary bookLibrary, MovieLibrary movieLibrary, Session session) {
         userAccountAuthenticator = new UserAccountAuthenticator();
         librarianMenu = new LibrarianMenu();
         registeredCustomerMenu = new RegisteredCustomerMenu();
         this.bookLibrary = bookLibrary;
         this.movieLibrary = movieLibrary;
+        this.session = session;
     }
 
     @Override
@@ -26,7 +28,6 @@ public class LoginOption implements Operations {
         String password = readUserInput.read();
         User user = userAccountAuthenticator.authenticateUser(libraryNumber, password);
         if (user.getRole() != "GUEST") {
-            Session session = new Session(user);
             session.setCurrentUser(user);
             if (user.getRole().equals("LIBRARIAN")) {
                 librarianMenu.displayOptionsForLibrarian(bookLibrary, movieLibrary, session);
