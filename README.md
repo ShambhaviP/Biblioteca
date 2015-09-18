@@ -2,7 +2,7 @@
 
 ##Problem Description
 
-A Library Management System called Biblioteca that handles listing, checking out and returning of library books.
+A Library Management System called Biblioteca that has certain books and movies, handles listing and checking out of books and movies and also, returning of books.
 
 ##Dependencies
 
