@@ -29,9 +29,9 @@ public class LoginOption implements Operations {
             Session session = new Session(user);
             session.setCurrentUser(user);
             if (user.getRole().equals("LIBRARIAN")) {
-                librarianMenu.displayOptionsForLibrarian(bookLibrary, movieLibrary);
+                librarianMenu.displayOptionsForLibrarian(bookLibrary, movieLibrary, session);
             } else if (user.getRole().equals("CUSTOMER")) {
-                registeredCustomerMenu.displayOptionsForARegisteredCustomer(bookLibrary, movieLibrary);
+                registeredCustomerMenu.displayOptionsForARegisteredCustomer(bookLibrary, movieLibrary, session);
             }
         }
     }

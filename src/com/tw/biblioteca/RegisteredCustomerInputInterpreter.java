@@ -8,13 +8,17 @@ public class RegisteredCustomerInputInterpreter implements InputInterpreter {
     private ReturnBookOption returnBookOption;
     private ListMoviesOption listMoviesOption;
     private CheckOutMovieOption checkOutMovieOption;
+    private LogoutOption logoutOption;
+    private MainMenu mainMenu;
 
-    public RegisteredCustomerInputInterpreter(BookLibrary bookLibrary, MovieLibrary movieLibrary) {
+    public RegisteredCustomerInputInterpreter(BookLibrary bookLibrary, MovieLibrary movieLibrary, Session session) {
         listBookOption = new ListBookOption(bookLibrary);
         checkOutBookOption = new CheckOutBookOption(bookLibrary);
         returnBookOption = new ReturnBookOption(bookLibrary);
         listMoviesOption = new ListMoviesOption(movieLibrary);
         checkOutMovieOption = new CheckOutMovieOption(movieLibrary);
+        logoutOption = new LogoutOption(session);
+        mainMenu = new MainMenu(bookLibrary, movieLibrary);
     }
 
     @Override
@@ -39,6 +43,10 @@ public class RegisteredCustomerInputInterpreter implements InputInterpreter {
                 checkOutMovieOption.performOperation();
                 break;
             case "6":
+                logoutOption.performOperation();
+                mainMenu.displayMainMenu();
+                break;
+            case "7":
                 System.exit(0);
                 break;
             default:

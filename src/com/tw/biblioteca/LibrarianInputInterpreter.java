@@ -9,14 +9,18 @@ public class LibrarianInputInterpreter implements InputInterpreter{
     private ListMoviesOption listMoviesOption;
     private CheckOutMovieOption checkOutMovieOption;
     private ViewCheckedOutBookDetails viewCheckedOutBookDetails;
+    private LogoutOption logoutOption;
+    private MainMenu mainMenu;
 
-    public LibrarianInputInterpreter(BookLibrary bookLibrary, MovieLibrary movieLibrary) {
+    public LibrarianInputInterpreter(BookLibrary bookLibrary, MovieLibrary movieLibrary, Session session) {
         listBookOption = new ListBookOption(bookLibrary);
         checkOutBookOption = new CheckOutBookOption(bookLibrary);
         returnBookOption = new ReturnBookOption(bookLibrary);
         listMoviesOption = new ListMoviesOption(movieLibrary);
         checkOutMovieOption = new CheckOutMovieOption(movieLibrary);
         viewCheckedOutBookDetails = new ViewCheckedOutBookDetails(bookLibrary);
+        logoutOption = new LogoutOption(session);
+        mainMenu = new MainMenu(bookLibrary, movieLibrary);
     }
 
     @Override
@@ -44,6 +48,10 @@ public class LibrarianInputInterpreter implements InputInterpreter{
                 viewCheckedOutBookDetails.performOperation();
                 break;
             case "7":
+                logoutOption.performOperation();
+                mainMenu.displayMainMenu();
+                break;
+            case "8":
                 System.exit(0);
                 break;
             default:

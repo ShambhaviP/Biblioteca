@@ -9,6 +9,7 @@ public class RegisteredCustomerMenu {
     private UserOption userOption4;
     private UserOption userOption5;
     private UserOption userOption6;
+    private UserOption userOption7;
 
     public RegisteredCustomerMenu() {
         userOption1 = new UserOption("1.List Books (Enter 1 to choose this option)");
@@ -16,10 +17,11 @@ public class RegisteredCustomerMenu {
         userOption3 = new UserOption("3.Return A Book (Enter 3 to choose this option)");
         userOption4 = new UserOption("4.List Movies (Enter 4 to choose this option)");
         userOption5 = new UserOption("5.Checkout A Movie (Enter 5 to choose this option)");
-        userOption6 = new UserOption("6.Quit (Enter 6 to choose this option)");
+        userOption6 = new UserOption("6.Log Out (Enter 6 to choose this option)");
+        userOption7 = new UserOption("7.Quit (Enter 7 to choose this option)");
     }
 
-    public void displayOptionsForARegisteredCustomer(BookLibrary bookLibrary, MovieLibrary movieLibrary) {
+    public void displayOptionsForARegisteredCustomer(BookLibrary bookLibrary, MovieLibrary movieLibrary, Session session) {
         while (true) {
             MenuGenerator menuGenerator = new MenuGenerator();
             menuGenerator.createOptionList(userOption1);
@@ -28,9 +30,10 @@ public class RegisteredCustomerMenu {
             menuGenerator.createOptionList(userOption4);
             menuGenerator.createOptionList(userOption5);
             menuGenerator.createOptionList(userOption6);
+            menuGenerator.createOptionList(userOption7);
             menuGenerator.displayOptionList();
             ReadUserInput readUserInput = new ReadUserInput();
-            RegisteredCustomerInputInterpreter registeredCustomerInputInterpreter = new RegisteredCustomerInputInterpreter(bookLibrary, movieLibrary);
+            RegisteredCustomerInputInterpreter registeredCustomerInputInterpreter = new RegisteredCustomerInputInterpreter(bookLibrary, movieLibrary, session);
             registeredCustomerInputInterpreter.interpret(readUserInput.read());
         }
     }

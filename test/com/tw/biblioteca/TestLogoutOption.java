@@ -8,7 +8,7 @@ public class TestLogoutOption {
 
     @Test
     public void shouldSetTheCurrentUserToUndefinedUserWhenCurrentUserLogsOut() {
-        User user = new User("111-1111", "user1password", "CUSTOMER");
+        User user = new User("111-1111", "password1", "CUSTOMER");
         Session session = new Session(user);
         LogoutOption logoutOption = new LogoutOption(session);
         logoutOption.performOperation();

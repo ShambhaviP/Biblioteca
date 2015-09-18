@@ -33,7 +33,7 @@ public class TestRegisteredCustomerInputInterpreter {
         ArrayList<Movie> movies = new ArrayList<>();
         movies.add(movie1);
         MovieLibrary movieLibrary = new MovieLibrary(movies);
-        RegisteredCustomerInputInterpreter registeredCustomerInputInterpreter = new RegisteredCustomerInputInterpreter(bookLibrary, movieLibrary);
+        RegisteredCustomerInputInterpreter registeredCustomerInputInterpreter = new RegisteredCustomerInputInterpreter(bookLibrary, movieLibrary, session);
         registeredCustomerInputInterpreter.interpret("1");
         String lineDivider = "\n-------------------------------------------------------\n";
 
@@ -53,7 +53,7 @@ public class TestRegisteredCustomerInputInterpreter {
         ArrayList<Movie> movies = new ArrayList<>();
         movies.add(movie1);
         MovieLibrary movieLibrary = new MovieLibrary(movies);
-        RegisteredCustomerInputInterpreter registeredCustomerInputInterpreter = new RegisteredCustomerInputInterpreter(bookLibrary, movieLibrary);
+        RegisteredCustomerInputInterpreter registeredCustomerInputInterpreter = new RegisteredCustomerInputInterpreter(bookLibrary, movieLibrary, session);
         registeredCustomerInputInterpreter.interpret("-1");
         assertEquals("\nSelect a valid option!\n", outContent.toString());
     }
@@ -71,7 +71,7 @@ public class TestRegisteredCustomerInputInterpreter {
         ArrayList<Movie> movies = new ArrayList<>();
         movies.add(movie1);
         MovieLibrary movieLibrary = new MovieLibrary(movies);
-        RegisteredCustomerInputInterpreter registeredCustomerInputInterpreter = new RegisteredCustomerInputInterpreter(bookLibrary, movieLibrary);
+        RegisteredCustomerInputInterpreter registeredCustomerInputInterpreter = new RegisteredCustomerInputInterpreter(bookLibrary, movieLibrary, session);
         registeredCustomerInputInterpreter.interpret("4");
 
         assertEquals((String.format("%-20s%-20s%-20s%-20s", "MOVIE", "YEAR OF RELEASE", "DIRECTOR", "RATING") + "\n" + String.format("%-20s%-20s%-20s%-20s", "Titanic", 1997, "James Cameron", "8.5") + "\n"), outContent.toString());
@@ -81,7 +81,7 @@ public class TestRegisteredCustomerInputInterpreter {
     public final ExpectedSystemExit exit = ExpectedSystemExit.none();
 
     @Test
-    public void shouldPerformASystemExitWhenRegisteredCustomerChoosesOptionNumberSixToQuitApplication() {
+    public void shouldPerformASystemExitWhenRegisteredCustomerChoosesOptionNumberSevenToQuitApplication() {
         Book book = new Book("Dracula", "Bram Stoker", 1920);
         ArrayList<Book> availableBooks = new ArrayList<>();
         availableBooks.add(book);
@@ -93,10 +93,10 @@ public class TestRegisteredCustomerInputInterpreter {
         ArrayList<Movie> movies = new ArrayList<>();
         movies.add(movie1);
         MovieLibrary movieLibrary = new MovieLibrary(movies);
-        RegisteredCustomerInputInterpreter registeredCustomerInputInterpreter = new RegisteredCustomerInputInterpreter(bookLibrary, movieLibrary);
+        RegisteredCustomerInputInterpreter registeredCustomerInputInterpreter = new RegisteredCustomerInputInterpreter(bookLibrary, movieLibrary, session);
 
         exit.expectSystemExit();
-        registeredCustomerInputInterpreter.interpret("6");
+        registeredCustomerInputInterpreter.interpret("7");
     }
 
     @After
