@@ -25,7 +25,7 @@ public class TestViewUserDetails {
         ViewUserDetails viewUserDetails = new ViewUserDetails(session);
         viewUserDetails.performOperation();
 
-        assertEquals(String.format("%-20s%-20s%-20s%-20s", "111-1111", "Elena Gilbert", "elena_gilbert@tvd.com", "+1 2345678901") + "\n", outContent.toString());
+        assertEquals(String.format("%-20s%-20s%-20s%-20s", "LIBRARY NUMBER", "NAME", "EMAIL", "PHONE")+"\n"+String.format("%-20s%-20s%-20s%-20s", "111-1111", "Elena Gilbert", "elena_gilbert@tvd.com", "+1 2345678901") + "\n", outContent.toString());
     }
 
     @After
